@@ -1,10 +1,10 @@
-We use [Composer](https://getcomposer.org/){:target="_blank"} to manage Magento components and their dependencies. Using Composer to get the Magento software [metapackage](https://glossary.magento.com/metapackage) provides the following advantages:
+我们使用 [Composer](https://getcomposer.org/){:target="_blank"} 来管理 Magento 组件和依赖。 使用 Composer 获取 Magento 软件 [元包](https://glossary.magento.com/metapackage) 具有以下优点:
 
--  Reuse third-party libraries without bundling them with source code
--  Reduce extension conflicts and compatibility issues by using a component-based architecture with robust dependency management
--  Adhere to [PHP-Framework Interoperability Group (FIG)](https://www.php-fig.org/) standards
--  Repackage Magento Open Source with other components
--  Use the Magento software in a production environment
+-  重用第三方库，而不将它们与源代码捆绑在一起
+-  通过使用基于组件的体系结构和健壮的依赖管理减少扩展冲突和兼容性问题
+-  遵守 [PHP-Framework Interoperability Group (FIG)](https://www.php-fig.org/) 标准
+-  将Magento与其他组件重新打包为开放源码
+-  在生产环境中使用Magento软件
 
 {:.bs-callout-warning}
-You must create a Composer project from our metapackage if you want to use the Magento Web Setup Wizard to upgrade the Magento software and third-party extensions.
+如果要使用Magento Web安装向导升级Magento软件和第三方扩展，必须从我们的元包创建一个Composer项目。

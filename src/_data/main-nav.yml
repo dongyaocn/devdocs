@@ -1,153 +1,153 @@
-- label: Cloud
+- label: 云
   children:
 
-    - label: Cloud basics
+    - label: 云基础
       children:
-        - label: Cloud Guide
+        - label: 云指南
           url: /cloud/bk-cloud.html
           versionless: true
 
-        - label: Cloud Architecture
+        - label: 云架构
           url: /cloud/architecture/cloud-architecture.html
           versionless: true
 
-        - label: Project Structure
+        - label: 项目结构
           url: /cloud/project/project-start.html
           versionless: true
 
-        - label: Upgrades and Patches
+        - label: 升级和补丁
           url: /cloud/project/project-upgrade-parent.html
           versionless: true
 
-        - label: Release Notes
+        - label: 发布说明
           url: /cloud/release-notes/cloud-tools.html
           versionless: true
 
-    - label: Cloud development
+    - label: 云开发
       children:
-        - label: Local development
+        - label: 本地开发
           url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Configure and launch Docker
+        - label: 配置并启动 Docker
           url: /cloud/docker/docker-config.html
           versionless: true
 
-        - label: Docker quick reference
+        - label: Docker 快速参考
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
 
-        - label: Configure Application
+        - label: 配置应用程序
           url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
 
-        - label: Configure Environments
+        - label: 配置环境
           url: /cloud/env/environments.html
           versionless: true
 
-    - label: Functional Testing
+    - label: 功能测试
       children:
-        - label: Magento application testing
+        - label: Magento 应用程序测试
           url: /cloud/docker/docker-mftf.html
           versionless: true
 
-        - label: ECE-Tools testing
+        - label: ECE-Tools 测试
           url: /cloud/docker/docker-development-testing.html
           versionless: true
 
-- label: Setup
+- label: 安装
   children:
 
-    - label: Installation Guide
+    - label: 安装指南
       url: /install-gde/bk-install-guide.html
 
-    - label: Magento Extensions Guide
+    - label: Magento 扩展指南
       url: /extensions/
       versionless: true
 
-    - label: Software Update Guide
+    - label: 软件更新指南
       url: /comp-mgr/bk-compman-upgrade-guide.html
 
-    - label: Configuration Guide
+    - label: 配置指南
       url: /config-guide/bk-config-guide.html
 
-    - label: Performance Best Practices
+    - label: 性能最佳实践
       url: /performance-best-practices/introduction.html
 
-    - label: Migration Guide
+    - label: 迁移指南
       url: /migration/bk-migration-guide.html
 
-    - label: Release Information
+    - label: 发布信息
       url: /release-notes/bk-release-notes.html
 
-    - label: Command-line Tools Reference
+    - label: Command-line Tools 参考
       url: /reference/cli/magento.html
 
-- label: Development
+- label: 开发
   children:
 
-    - label: Backend
+    - label: 后端
       children:
 
-        - label: Architecture
+        - label: 体系结构
           url: /architecture/bk-architecture.html
 
-        - label: PHP Developer Guide
+        - label: PHP 开发指南
           url: /extension-dev-guide/bk-extension-dev-guide.html
 
-        - label: Extension Developer Best Practices
+        - label: 扩展开发人员最佳实践
           url: /ext-best-practices/bk-ext-best-practices.html
 
-        - label: Module Reference Guide
+        - label: Module 参考指南
           url: /mrg/intro.html
 
-        - label: Coding Standards
+        - label: 编码标准
           url: /coding-standards/bk-coding-standards.html
 
-        - label: Contributor Guide
+        - label: 贡献者指南
           url: /contributor-guide/contributing.html
 
-    - label: Frontend
+    - label: 前端
       children:
 
-        - label: Frontend Developer Guide
+        - label: 前端开发人员指南
           url: /frontend-dev-guide/bk-frontend-dev-guide.html
 
-        - label: UI Components Guide
+        - label: UI组件指南
           url: /ui_comp_guide/bk-ui_comps.html
 
-        - label: JavaScript Developer Guide
+        - label: JavaScript开发者指南
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
 
-        - label: Admin Design Pattern Library
+        - label: Admin 设计模式库
           url: /pattern-library/bk-pattern.html
 
-        - label: Admin Style Guide
+        - label: Admin 风格指南
           url: /design-styleguide/bk-styleguide.html
 
-        - label: PWA Documentation Site
+        - label: PWA 文档网站
           url: https://magento.github.io/pwa-studio/
 
-        - label: Page Builder Developer Guide
+        - label: Page Builder 开发人员指南
           url: /page-builder/docs/index.html
           versionless: true
 
     - label: API
       children:
 
-        - label: Get Started with Magento Web APIs
+        - label: 开始使用 Magento Web APIs
           url: /get-started/bk-get-started-api.html
 
-        - label: REST API Reference
+        - label: REST API 参考
           url: /rest/bk-rest.html
 
-        - label: SOAP API Reference
+        - label: SOAP API 参考
           url: /soap/bk-soap.html
 
-        - label: GraphQL Developer Guide
+        - label: GraphQL 开发者指南
           url: /graphql/
 
-        - label: Marketplace EQP API Reference
+        - label: Marketplace EQP API 参考
           url: /marketplace/eqp/v1/api.html
           versionless: true
 
@@ -156,34 +156,34 @@
           versionless: true
 
 
-- label: Testing
+- label: 测试
   children:
 
-    - label: Magento Testing Guide
+    - label: Magento 测试指南
       url: /test/testing.html
 
-    - label: Functional Acceptance Testing (MFTF)
+    - label: 功能验收测试 (MFTF)
       url: /mftf/docs/introduction.html
       versionless: true
 
-    - label: Functional Testing
+    - label: 功能测试
       url: /mtf/mtf_introduction.html
 
-    - label: Integration Testing
+    - label: 集成测试
       url: /test/integration/integration_test_execution.html
 
-    - label: JavaScript Unit Testing
+    - label: JavaScript 单元测试
       url: /test/js/jasmine.html
 
-    - label: PHP Unit Testing
+    - label: PHP 单元测试
       url: /test/unit/unit_test_execution.html
 
-    - label: Web API Functional Testing
+    - label: Web API 功能测试
       url: /get-started/web-api-functional-testing.html
 
 -
 
-- label: Functional Areas
+- label: 功能区域
   children:
 
     - label: Advanced Reporting
@@ -192,53 +192,53 @@
     - label: B2B
       url: /b2b/bk-b2b.html
 
-    - label: Checkout
+    - label: 结账
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Compliance
+    - label: 行业合规
       url: /compliance/industry-compliance.html
       versionless: true
 
-    - label: Extensions Marketplace
+    - label: 扩展市场
       url: /marketplace/sellers/getting-started.html
       versionless: true
 
-    - label: Inventory Management
+    - label: 库存管理
       url: /inventory/index.html
 
-    - label: Order Management
+    - label: 订单管理
       url: http://omsdocs.magento.com/en/
 
     - label: Page Builder
       url: /page-builder/docs/index.html
       versionless: true
 
-    - label: Payment Integrations
+    - label: 支付集成
       url: /payments-integrations/bk-payments-integrations.html
 
-    - label: Product Recommendations
+    - label: 产品推荐
       url: /recommendations/product-recs.html
       versionless: true
 
     - label: Staging
       url: /extension-dev-guide/staging.html
 
-- label: Tutorials
+- label: 教程
   children:
 
-    - label: Rest Tutorials
+    - label: Rest 教程
       url: /rest/tutorials/index.html
 
-    - label: Customize Product Creation Form
+    - label: 定制产品创建表单
       url: /howdoi/customize_product.html
 
-    - label: Customize Checkout
+    - label: 定制结帐
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Magento Support
+    - label: Magento 支持
       url: /community/resources/support.html
       versionless: true
 
-    - label: Video Tutorials
+    - label: Video 教程
       url: /videos/
       versionless: true

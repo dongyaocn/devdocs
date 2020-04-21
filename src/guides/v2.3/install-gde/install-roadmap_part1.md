@@ -1,55 +1,55 @@
 ---
 group: installation-guide
-title: Installation roadmap (reference)
+title: 安装路线图（参考）
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-This roadmap provides a reference for the installation process. Refer to this topic at any time to move back and forth through the stages of installation.
+此路线图为安装过程提供了参考。请随时参考本主题，以便在安装阶段前后移动。
 
-This is a list of the most common topics you'll need for installation; the list is not comprehensive, however. You'll find additional information using the table of contents on the left side of the page.
+这是安装所需的最常见主题的列表；但是，该列表并不全面。您将在页面左侧的目录中找到其他信息。
 
-## Precondition: How advanced are you?
+## 先决条件：你有多牛逼？
 
-Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is? If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-install-guide.html).
+你知道什么是“终端”应用程序吗？你知道你的服务器运行什么操作系统吗？你知道`Apache`是什么吗？如果没有，请参阅 [安装概述]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
-## Installation part 1: Getting started
+## 安装第1部分：入门
 
-Topics include:
+主题包括:
 
-*  [Choose how to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-*  [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-*  [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
-*  [The Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+*  [选择如何获取Magento软件]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [系统要求]({{ page.baseurl }}/install-gde/system-requirements.html)
+*  [先决条件]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
+*  [Magento文件系统所有者]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
-## Installation part 2: Installing
+## 安装第2部分：安装
 
-Topics include:
+主题包括:
 
-*  [Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
-*  [Optional sample data]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html)
+*  [命令行安装]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [安装向导]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [可选样本数据]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html)
 
-## Installation part 3: Post-installation
+## 安装第3部分：安装后
 
-Topics include:
+主题包括:
 
-*  [Verifying]({{ page.baseurl }}/install-gde/install/verify.html)
-*  [Configuring]({{ page.baseurl }}/install-gde/install/post-install-config.html)
-*  [Optional sample data (after installing Magento)]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
+*  [验证]({{ page.baseurl }}/install-gde/install/verify.html)
+*  [配置]({{ page.baseurl }}/install-gde/install/post-install-config.html)
+*  [可选示例数据（安装Magento后）]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
 
-## Upgrade, update
+## 升级，更新
 
-Topics include:
+主题包括：
 
-*  [Upgrading (or *patching* the Magento application)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*  [Updating components (including install, uninstall, update, enable, disable)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*  *Contributing developers only*: [Contributing developers---update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
+*  [升级（或*修补*Magento应用程序）]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+*  [更新组件（包括安装、卸载、更新、启用、禁用）]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+*  *仅贡献开发者*: [贡献的开发人员---更新，重新安装Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
 
-## Deploy to production
+## 部署到生产
 
-[Deploy Magento to production]({{ page.baseurl }}/performance-best-practices/deployment-flow.html)
+[将Magento部署到生产环境]({{ page.baseurl }}/performance-best-practices/deployment-flow.html)
 
-*[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
+*[有贡献的开发人员]: 为Magento 2 CE代码库贡献代码的开发人员

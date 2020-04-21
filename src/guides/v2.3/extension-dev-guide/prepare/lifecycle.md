@@ -1,37 +1,37 @@
 ---
 group: php-developer-guide
-title: Extension Lifecycle
-menu_title: Extension lifecycle
+title: 扩展生命周期
+menu_title: 扩展生命周期
 ---
 
-This topic describes a module's lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.
-These executable classes can perform tasks that set up the database, update data, and clean up data.
+本主题描述模块的生命周期，以及如何在初始化、升级或卸载模块时创建执行代码的类。
+这些可执行类可以执行设置数据库、更新数据和清理数据的任务。
 
-*Note:* Theme and language package extensions do not need initialization or uninstallation tasks because they do not install database schemas or update data.
+*注意：*主题和语言包扩展不需要初始化或卸载任务，因为它们不安装数据库架构或更新数据。
 
-## Lifecycle guidelines
+## 生命周期指南
 
-Follow these guidelines when developing your executable classes to have them run during specific lifecycle stages:
+在开发可执行类以使其在特定生命周期阶段运行时，请遵循以下准则：
 
-*  Put your executable class in the `Setup` directory inside your module's root directory.
-*  Use the specific file and class name for your class's target lifecycle stage.
-*  Implement the specific class interface and function for your class's target stage.
-*  Follow Magento's [versioning policy] when changing your module's version.
+*  将可执行类放在模块根目录中的`Setup`目录中。
+*  为类(Class)的目标生命周期阶段使用特定的文件和类名。
+*  为类(Class)的目标阶段实现特定的类接口和函数。
+*  更改模块版本时，请遵循Magento的[版本控制策略]。
 
-## Schema initialization stages
+## Schema 初始化阶段
 
-The schema initialization stages are the first set of processes Magento runs when your module is installed, re-installed, or upgraded.
+Schema初始化阶段是指安装、重新安装或升级模块时Magento运行的第一组进程。
 
-### Schema installation
+### Schema 安装
 
-Magento executes the schema installation class during your module's initial install.
-If the `schema_version` for your module is found in the `setup_module` table, Magento skips this stage and proceeds to the [schema upgrade] stage.
+在模块的初始安装期间，Magento执行schema安装类。
+如果在`setup_module`表中找到模块的`schema_version`，则Magento将跳过此阶段并进入[schema upgrade]阶段。
 
-| **Class name:** | `InstallSchema`            |
-| **Interface:**  | [`InstallSchemaInterface`] |
-| **Method:**     | `install()`                |
+| **类名:** | `InstallSchema`            |
+| **接口:**  | [`InstallSchemaInterface`] |
+| **方法:**     | `install()`                |
 
-**Example:** InstallSchema.php
+**示例:** InstallSchema.php
 
 ```php
 class VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
@@ -46,16 +46,16 @@ class VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Se
 }
 ```
 
-### Schema upgrade
+### Schema 升级 {#schema-upgrade}
 
-Magento executes your module's schema upgrade class when it detects an earlier installation.
-The purpose of this class is to update the database structure or apply patches.
+当检测到早期安装时，Magento将执行模块的schema upgrade类。
+此类的目的是更新数据库结构或应用修补程序。
 
-| **Class name** | `UpgradeSchema`            |
-| **Interface**  | [`UpgradeSchemaInterface`] |
-| **Method**     | `upgrade()`                |
+| **类名** | `UpgradeSchema`            |
+| **接口**  | [`UpgradeSchemaInterface`] |
+| **方法**     | `upgrade()`                |
 
-**Example:** UpgradeSchema.php
+**示例:** UpgradeSchema.php
 
 ```php
 class \VendorName\ModuleName\Setup\UpgradeSchema implements \Magento\Framework\Setup\UpgradeSchemaInterface
@@ -70,14 +70,14 @@ class \VendorName\ModuleName\Setup\UpgradeSchema implements \Magento\Framework\S
 }
 ```
 
-### Recurring schema event
+### 重复 schema 事件
 
-Magento executes your module's recurring schema event class after every schema installation or upgrade stage.
-This class makes final modifications to the database schema after it has been installed or updated.
+Magento在每个schema安装或升级阶段之后执行模块的定期schema事件类。
+此类在安装或更新 database schema后对其进行最终修改。
 
-| **Class name** | `Recurring`                |
-| **Interface**  | [`InstallSchemaInterface`] |
-| **Method**     | `install()`                |
+| **类名** | `Recurring`                |
+| **接口**  | [`InstallSchemaInterface`] |
+| **方法**     | `install()`                |
 
 **Example:** Recurring.php
 
@@ -94,20 +94,20 @@ class \VendorName\ModuleName\Setup\Recurring implements \Magento\Framework\Setup
 }
 ```
 
-## Data initialization
+## 数据初始化
 
-Magento goes through your module's data initialization stages after the schema initialization processes complete.
+在schema初始化过程完成后，Magento将遍历模块的数据初始化阶段。
 
-### Data installation
+### 数据安装
 
-Magento executes the data installation class during your module's initial install unless an existing version entry is found in the database.
-The purpose of this class is to populate the database with initial data.
+除非在数据库中找到现有版本条目，否则在模块的初始安装期间，Magento将执行数据安装类。
+此类的目的是用初始数据填充数据库。
 
-| **Class name** | `InstallData`            |
-| **Interface**  | [`InstallDataInterface`] |
-| **Method**     | `install()`              |
+| **类名** | `InstallData`            |
+| **接口**  | [`InstallDataInterface`] |
+| **方法**     | `install()`              |
 
-**Example:** InstallData.php
+**示例:** InstallData.php
 
 ```php
 class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Setup\InstallDataInterface
@@ -122,16 +122,16 @@ class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Set
 }
 ```
 
-### Data upgrade
+### 数据升级
 
-Magento executes the data upgrade class when it detects an earlier version in the `data_version` field for the module in the `setup_module` table.
-The purpose of this class is to fix corrupted data or populate a new data field after a schema change.
+当Magento在`setup_module`表中模块的`data_version`字段中检测到早期版本时，它将执行数据升级类。
+此类的目的是修复损坏的数据或在架构更改后填充新的数据字段。
 
-| **Class name** | `UpgradeData`            |
-| **Interface**  | [`UpgradeDataInterface`] |
-| **Method**     | `upgrade()`              |
+| **类名** | `UpgradeData`            |
+| **接口**  | [`UpgradeDataInterface`] |
+| **方法**     | `upgrade()`              |
 
-**Example:** UpgradeData.php
+**示例:** UpgradeData.php
 
 ```php
 class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
@@ -146,16 +146,16 @@ class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Set
 }
 ```
 
-### Recurring data event
+### Recurring data 事件
 
-Magento executes your module's recurring data event class after every data installation or upgrade stage.
-This class makes final modifications to the database store after data has been installed or updated.
+Magento在每个数据安装或升级阶段之后执行模块的重复数据事件类。
+此类在安装或更新数据后对数据库存储区进行最终修改。
 
-| **Class name** | `RecurringData`          |
-| **Interface**  | [`InstallDataInterface`] |
-| **Method**     | `install()`              |
+| **类名** | `RecurringData`          |
+| **接口**  | [`InstallDataInterface`] |
+| **方法**     | `install()`              |
 
-**Example:** RecurringData.php
+**示例:** RecurringData.php
 
 ```php
 class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
@@ -170,12 +170,12 @@ class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\S
 }
 ```
 
-## Database interface
+## 数据库接口
 
-Use the [`ModuleDataSetupInterface`] when you need to do database manipulations.
-If your installation or upgrade logic spans multiple classes, pass this resource on to other classes that need to modify the database.
+需要进行数据库操作时，请使用[`ModuleDataSetupInterface`]。
+如果安装或升级逻辑跨越多个类，请将此资源传递给需要修改数据库的其他类。
 
-**Example:** [Customer module's DefaultCustomerGroupsAndAttributes.php]
+**示例:** [客户模块的 DefaultCustomerGroupsAndAttributes.php]
 
 ```php
 class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVersionInterface
@@ -227,11 +227,11 @@ class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVer
 }
 ```
 
-## Module version
+## 模块版本
 
-Use the [`ModuleContextInterface`] to get the current module version and execute logic based on the version.
+使用[`ModuleContextInterface`]获取当前模块版本并根据版本执行逻辑。
 
-**Example:** [User module's UpgradeData.php]
+**示例:** [用户模块 UpgradeData.php]
 
 ```php
 namespace Magento\User\Setup;
@@ -260,21 +260,21 @@ class UpgradeData implements UpgradeDataInterface
 }
 ```
 
-## Uninstall event
+## 卸载事件
 
-Magento executes the uninstall event class when your module is uninstalled using the [Component Manager] or with the following command line command:
+使用[Component Manager]或使用以下命令行命令卸载模块时，Magento将执行卸载事件类：
 
 ```bash
 bin/magento module:uninstall --remove-data <module_name>
 ```
 
-In this phase, your module should remove all traces of its existence in the database by dropping tables, deleting data, or restoring data.
+在此阶段，您的模块应通过删除表、删除数据或还原数据来删除数据库中存在的所有跟踪。
 
-| **Class name** | `Uninstall`            |
-| **Interface**  | [`UninstallInterface`] |
-| **Method**     | `uninstall()`          |
+| **类名** | `Uninstall`            |
+| **接口**  | [`UninstallInterface`] |
+| **方法**     | `uninstall()`          |
 
-**Example:** Uninstall.php
+**示例:** Uninstall.php
 
 ```php
 class \VendorName\ModuleName\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
@@ -289,19 +289,20 @@ class \VendorName\ModuleName\Setup\Uninstall implements \Magento\Framework\Setup
 }
 ```
 
-### Disabled modules
+### 禁用模块
 
-A disabled module can still execute its uninstall event.
-However, module-specific configurations such as its dependency injection and event/observer configurations will not be available and will cause problems.
+禁用的模块仍可以执行其卸载事件。
+但是，特定于模块的配置（如依赖注入和事件/观察者配置）将不可用，并将导致问题。
+通过在卸载事件类中不包含依赖项来避免这种情况
 
-Avoid this situation by not including dependencies in your uninstall event class
+**相关主题:**
 
-**Related Topics:**
-
-*  Magento's [versioning policy]
+*  Magento的[版本控制策略]
 
 [versioning policy]: {{ page.baseurl }}/extension-dev-guide/versioning/
+
 [schema upgrade]: #schema-upgrade
+
 [`InstallSchemaInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
 [`UpgradeSchemaInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php
 [`InstallDataInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallDataInterface.php

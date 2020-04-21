@@ -1,9 +1,9 @@
 ---
-group: installation-guide
-subgroup: Prerequisites
-title: Prerequisites
+group: 安装指南
+subgroup: 先决条件
+title: 先决条件
 menu_node: parent
-menu_title: Prerequisites
+menu_title: 先决条件
 menu_order: 1
 functional_areas:
   - Install
@@ -11,20 +11,20 @@ functional_areas:
   - Setup
 ---
 
-## Before you begin {#instgde-prereq-overview}
+## 在你开始之前 {#instgde-prereq-overview}
 
-Before you install Magento, you must do all of the following:
+在安装Magento之前，必须执行以下所有操作：
 
-*  Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
-*  If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-*  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
+*  设置一个或多个满足[Magento系统要求]({{page.baseurl}}/install-gde/system-requirements.html)的主机.
+*  如果要使用负载平衡设置多个web节点，请在安装Magento之前设置并测试系统的该部分。
+*  确保您可以在安装过程中的不同点备份整个系统，以便在[事件](https://glossary.magento.com/event) 中回滚.
 
 {:.bs-callout-info}
-We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
+我们假设您正在**开发环境**中安装Magento 2软件，这意味着您拥有对计算机具有访问权限的[root 用户](http://www.linfo.org/root.html)  **并且**计算机不需要高度安全。如果要设置更安全的计算机，强烈建议您咨询网络管理员以获得其他帮助。
 
-We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
+强烈建议您更新和升级操作系统软件。这些升级可以提供安全性和软件修复，防止将来出现问题。不知道这是什么意思？查看我们的[安装概述页]({{page.baseurl}}/install-gde/bk-install-guide.html).
 
-Enter the following commands as a user with `root` privileges:
+以具有`root`权限的用户身份输入以下命令：
 
 *  Ubuntu
 
@@ -46,9 +46,9 @@ yum -y update
 yum -y upgrade
 ```
 
-## Prerequisite check {#instgde-prereq-check}
+## 先决条件检查 {#instgde-prereq-check}
 
-To check your system for prerequisites, enter the following commands:
+要检查系统的先决条件，请输入以下命令：
 
 ### Apache
 
@@ -56,21 +56,21 @@ CentOS: `httpd -v`
 
 Ubuntu: `apache2 -v`
 
-Magento supports Apache version 2.4 as the following result indicates:
+Magento支持Apache2.4版本，结果如下：
 
 ```terminal
 Server version: Apache/2.4.0 (Unix)
 Server built:   Jul 23 2017 14:17:29
 ```
 
-To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/apache.html).
+要安装或升级Apache，请参阅[Apache]({{page.baseurl}}/install-gde/prereq/apache.html).
 
 ### PHP
 
 {:.bs-callout-info}
-Magento 2.3.3 supports PHP 7.2.
-All 3rd party libraries now support PHP 7.2.
-If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
+Magento 2.3.3支持PHP7.2。
+所有第三方库现在都支持PHP7.2。
+如果您有兴趣参与马金托社区项目，我们欢迎您的帮助！请参阅我们的[ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) 以获取未解决问题的完整列表。
 
 ```bash
 php -v
@@ -78,7 +78,7 @@ php -v
 
 {% include install/php-versions-template.md %}
 
-You must run [PHP](https://glossary.magento.com/php) version 7.2 or 7.3:
+必须运行[PHP]（https://glossary.magento.com/PHP）7.2或7.3版：
 
 ```terminal
 PHP 7.2.0 (cli) (built: Jan  9 2018 09:23:16) ( NTS )
@@ -86,7 +86,7 @@ Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-See [PHP](/guides/v2.3/install-gde/prereq/php-settings.html) for info on PHP requirements.
+有关PHP需求的信息，请参见[PHP](/guides/v2.3/install-gde/prereq/php-settings.html) 。
 
 ### MySQL
 
@@ -100,7 +100,7 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.6 or later as the following result indicates:
+请参阅[PHP]您必须运行MySQL 5.6版或更高版本，因为以下结果表明：有关PHP需求的信息。
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -118,18 +118,18 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 
-To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
+要安装或升级MySQL，请参见[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
 {:.ref-header}
-Next step
+下一步
 
-[Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
+[选择如何安装Magento软件]({{page.baseurl}}/install-gde/bk-install-guide.html)
 
 {:.ref-header}
-Related topics
+相关主题
 
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
 *  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
-*  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-*  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [安装可选软件]({{page.baseurl}}/install-gde/prereq/optional.html)
+*  [如何获得Magento软件]({{ page.baseurl }}/install-gde/bk-install-guide.html)

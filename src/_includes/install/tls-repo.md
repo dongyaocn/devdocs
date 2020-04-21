@@ -1,16 +1,16 @@
-The Magento software and component repository, `repo.magento.com`, recently started requiring Transport Layer Security (TLS) 1.1 or later.
+Magento软件和组件存储库`repo.Magento.com`最近开始要求传输层安全（TLS）1.1或更高版本。
 
-The [PCI Security Standards Council](https://en.wikipedia.org/wiki/Payment_Card_Industry_Security_Standards_Council)} removed SSL/TLS 1.0 as an example of strong cryptography from the [PCI Data Security Standard (PCI DSS)](https://www.pcisecuritystandards.org/pci_security) version 3.1, stating that it can no longer be used as a security control after June 30, 2016.
+[PCI安全标准委员会](https://en.wikipedia.org/wiki/Payment_Card_Industry_Security_Standards_Council)删除了SSL/TLS 1.0作为[PCI数据安全标准(PCI DSS)](https://www.pcisecuritystandards.org/pci_security) 版本3.1，声明在2016年6月30日之后不再用作安全控制。
 
-For details, see [Date Change for Migrating from SSL and Early TLS](http://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls).
+有关详细信息，请参阅[从SSL和早期TLS迁移的更改日期](http://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls).
 
-### Symptoms
+### 症状
 
-If you have an earlier version of TLS, you'll see the errors discussed in this section.
+如果您有早期版本的TLS，您将看到本节中讨论的错误。
 
-#### Downloading a Magento metapackage
+#### 下载Magento元包，
 
-The following error displays if you attempt to run `composer create-project` to get a Magento metapackage:
+如果试图运行`composer create project`以获取Magento元包，将显示以下错误：
 
 ```terminal
 [Composer\Downloader\TransportException]
@@ -18,8 +18,8 @@ The "https://repo.magento.com/packages.json" file could not be downloaded: Faile
 failed to open stream: operation failed
 ```
 
-### Using the Web Setup Wizard
+### 使用Web安装向导
 
-Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:
+保存身份验证凭据或与Magento Marketplace同步等操作失败，错误如下：
 
 ![SSL connect error]({{ site.baseurl }}/common/images/install_ssl-connect-error.png)

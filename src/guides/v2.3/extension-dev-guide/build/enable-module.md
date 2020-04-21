@@ -1,15 +1,15 @@
 ---
 group: php-developer-guide
 subgroup: 03_Build
-title: Enable or disable your component
-menu_title: Enable or disable your component
+title: 启用或禁用组件
+menu_title: 启用或禁用组件
 menu_order: 8000
 ---
 
-After you have built the component and are ready to enable it in your Magento environment, do the following:
+构建组件并准备在Magento环境中启用它之后，请执行以下操作：
 
-1. Disable the [cache](https://glossary.magento.com/cache) under `System->Cache Management`.
-1. Enter the following in the command line:
+1. 在 System->Cache Management`下 禁用 [缓存](https://glossary.magento.com/cache)
+1. 在命令行中输入以下命令：
 
    ```bash
    bin/magento module:enable --clear-static-content Component_Name
@@ -23,24 +23,24 @@ After you have built the component and are ready to enable it in your Magento en
    bin/magento cache:clean
    ```
 
-   Where `Component_Name` is the name of the component you are enabling.
+   其中 `Component_Name` 是要启用的组件的名称。
 
-1. Check under **System** > **Tools** > **Web Setup Wizard** > **Module Manager** that the component is present.
+1. 在 **System** > **Tools** > **Web Setup Wizard** > **Module Manager** 检查组件是否存在。
 
-## Order of operations
+## 操作顺序
 
-The general order of operations for `setup:upgrade` is:
+ `setup:upgrade` 一般的操作顺序：
 
-1. **Schema install/upgrade.**
-1. **Schema post-upgrade**— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
-1. **Data install/upgrade** — installs the data. Taken from `setup/InstallData.php`.
+1. **架构 安装/升级.**
+1. **架构 升级后**— 处理任何其他更新。这些定期升级是独立进行的，与架构的任何更改无关。
+1. **数据 安装/升级** — 安装数据。来自 `setup/InstallData.php`.
 
-## Disable a component
+## 禁用组件
 
-To disable a component, enter the following at the command line:
+要禁用组件，请在命令行中输入以下命令：
 
 ```bash
 bin/magento module:disable --clear-static-content Component_Name
 ```
 
-For more on enabling and disabling components, see [enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
+有关启用和禁用组件的详细信息，请参见 [启用或禁用模块]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).

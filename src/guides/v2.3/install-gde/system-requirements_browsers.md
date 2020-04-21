@@ -1,8 +1,8 @@
 ---
 group: installation-guide
 subgroup: Getting Started
-title: Supported browsers
-menu_title: Supported browsers
+title: 支持的浏览器
+menu_title: 支持的浏览器
 menu_node:
 menu_order: 3
 functional_areas:
@@ -11,5 +11,5 @@ functional_areas:
   - Setup
 ---
 
-## Supported browsers
+## 支持的浏览器
 {% include browsers/supported-browsers.md %}

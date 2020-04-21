@@ -1,8 +1,8 @@
 ---
 group: installation-guide
 subgroup: 01_resource
-title: Helpful resources
-menu_title: Helpful resources
+title: 有用的资源
+menu_title: 有用的资源
 menu_order: 1
 menu_node: parent
 functional_areas:
@@ -11,8 +11,9 @@ functional_areas:
   - Setup
 ---
 
-You can use the following resources at any time to help you with your Magento installation:
+您可以随时使用以下资源来帮助您安装Magento：
 
-*  [Quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html)—a quick tutorial to get your installation off the ground quickly
-*  [Roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html)—a detailed reference of all your installation and post-installation options
-*  [Flow diagram]({{ page.baseurl }}/install-gde/install-flow-diagram.html)—a conceptual diagram to orient you to the installation process
+*  [快速参考（教程）]({{page.baseurl}}/install-gde/install-Quick-ref.html)—一个快速入门的教程
+*  [路线图（参考）]({{page.baseurl}}/install-gde/install-Roadmap_part1.html)—所有安装和安装后选项的详细参考
+*  [流程图]({{ page.baseurl }}/install-gde/install-flow-diagram.html)—用于指导您了解安装过程的概念图
+

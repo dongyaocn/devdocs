@@ -1,33 +1,33 @@
 ---
 group: installation-guide
-title: What operating system is my server running?
+title: 我的服务器运行什么操作系统?
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-How can you tell what operating system and version your Magento server runs?
+如何判断Magento服务器运行的操作系统和版本?
 
-**Prerequisites**: You must access the server using a command prompt (an application that enables you to enter commands directly).
+**先决条件**:您必须使用命令提示符(一个允许您直接输入命令的应用程序)访问服务器。
 
-If you can log in directly to the machine, the application is usually called Terminal.
+如果您可以直接登录到计算机，应用程序通常称为终端。
 
-If you cannot log in directly, you can [log in remotely]({{ page.baseurl }}/install-gde/basics/basics_login.html).
+如果不能直接登录,可以 [远程登录]({{ page.baseurl }}/install-gde/basics/basics_login.html).
 
-## Exact command or process of elimination?
+## 准确的命令 或者 使用排除法获取命令?
 
-If you already know you're running Ubuntu or CentOS but don't know the version, see one of the following sections. If you don't know that much, just use the process of elimination---run both commands until you find the one that works.
+如果你已经知道你在运行Ubuntu或者CentOS，但是你不知道它的版本，请看下面的章节。如果您不知道那么多，只需使用排除法—运行两个命令，直到您找到一个工作环境。
 
 ### CentOS
 
-To find the CentOS version, enter the following command in Terminal:
+要找到CentOS版本，请在终端中输入以下命令:
 
 ```bash
 cat /etc/*release*
 ```
 
-The following sample output shows you're running CentOS 6.5 (you can ignore most of the output):
+下面的示例输出显示您正在运行CentOS 6.5(您可以忽略大部分输出):
 
 ```terminal
 CentOS release 6.5 (Final)
@@ -39,13 +39,13 @@ CentOS release 6.5 (Final)
 
 ### Ubuntu
 
-To find the Ubuntu version, enter the following command in Terminal:
+要找到Ubuntu版本，在终端输入以下命令:
 
 ```bash
 lsb_release -a
 ```
 
-The following sample output shows you're running Ubuntu 14:
+下面的示例输出显示您正在运行Ubuntu 14:
 
 ```terminal
 No LSB modules are available.

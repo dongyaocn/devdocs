@@ -1,10 +1,11 @@
-The following table discusses the component types that Magento Marketplace supports. The composer `type` column in the following table specifies the value of the `type` field you must add to `composer.json` for that type of component.
+下表讨论了Magento Marketplace支持的组件类型。下表中的composer`type`列指定必须添加到该类型组件的`composer.json`中的`type`字段的值。
 
-|Friendly name|composer.json type|Description|
-|--- |--- |--- |
-|Metapackage|metapackage|Technically, a Composer package type, not a Magento component type. A metapackage consists of only a `composer.json` file that specifies a list of components and their dependencies. For example, both {{site.data.var.ce}} and {{site.data.var.ee}} are metapackages.|
-|Module|magento2-module|Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package.|
-|Theme|magento2-theme|Code that modifies the look and feel of the storefront or Magento Admin.|
-|Language package|magento2-language|Translations for the storefront or Admin.|
-|Library|magento2-library|Support for libraries located in `lib/internal` instead of in the `vendor` directory.|
-|Component|magento2-component|The package formed of the files that must be located in root (index.php, .htaccess, etc). This includes `dev/tests` and `setup` as well for now.|
+|名称|composer.json 类型|描述|
+|--- |--- |:-- |
+|元包|metapackage|从技术上来说，这是一个Composer包类型，而不是Magento组件类型。 元包仅由特定的组件及其依赖项列表组成的 `composer.json` 文件。例如， {{site.data.var.ce}} 和 {{site.data.var.ee}} 都是元包.|
+|模块|magento2-module|修改Magento应用程序行为的代码。您可以将单个模块上载到Magento Marketplace，或者您的模块可以依赖于某些父包。|
+|主题|magento2-theme|修改店面或者Magento管理后台的外观视觉.|
+|语言包|magento2-language|Translations for the storefront or Admin.|
+|库|magento2-library|支持位于`lib/internal`而不是`vendor`目录中的库。|
+|组件|magento2-component|由必须位于根目录（index.php、.htaccess、etc）中的文件组成的包。目前还包括`dev/tests`和`setup`。|
+

@@ -1,29 +1,29 @@
 ---
 group: php-developer-guide
-title: The composer.json file
+title: composer.json文件
 ---
 
-## Overview
+## 概述
 
-Magento 2 uses [Composer][0]{:target="_blank"}, a [PHP](https://glossary.magento.com/php) dependency manager, to package components and product editions.
+Magento 2 使用 [Composer][0]{:target="_blank"}, 这是一个 [PHP](https://glossary.magento.com/php) 依赖管理器，用来打包组件和产品版本。
 
-Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
+Composer读取Magento根目录中的`Composer.json`文件，以下载该文件中列出的第三方依赖项。
 
-The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
+[组件管理器][1] 在扩展根目录中 使用 `composer.json` 文件执行以下操作:
 
-*  The Component Manager can update, uninstall, enable, or disable an [extension](https://glossary.magento.com/extension) if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
-*  The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
+*  如果使用Composer 安装(包含 来自 [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, 或者其他源) *和* 包含一个 `composer.json` 文件组件，则组件管理器可以更新、卸载、启用或禁用扩展。
+*  *没有*使用Composer（例如自定义代码）安装扩展。但如果组件包含了`composer.json`文件，组件管理器依然可以启用/禁用这个扩展。
 
-We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
+我们建议您在组件的根目录中包含`composer.json`，即使您不打算使用Magento将其分发给其他商家。
 
  {:.bs-callout-info}
-Magento does not support the [`path`][3] repository.
+Magento 不支持 [`path`][3] 仓库。
 
 ## composer.json
 
-Here is the example of composer.json file.
+这是一个 composer.json 示例文件
 
-{% collapsible File content for composer.json %}
+{% collapsible composer.json 文件内容 %}
  ```json
   {
     "name": "mycompany/sample-module-minimal",
@@ -47,175 +47,175 @@ Here is the example of composer.json file.
  ```
 {% endcollapsible %}
 
-## Composer binary location {#composer-binary}
+## Composer 二进制文件位置 {#composer-binary}
 
-Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed [composer](https://glossary.magento.com/composer).
+Magento 使用 `<Magento root>/vendor/composer` 目录下的composer二进制文件，而不是全局安装的[composer](https://glossary.magento.com/composer).
 
-Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.
+在使用Magento 2自定义、更新或排除composer故障时，请记住这一点。
 
-## Project vs product
+## 项目与产品
 
-In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
-The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
+在Composer中， "project" 包是 [`composer create-project`][9]{:target="_blank"} 用来设置项目结构的模板.
+[系统集成程序的安装说明][10] 使用 {{site.data.var.ce}} 和 {{site.data.var.ee}} 项目包来设置 Magento 目录结构。
 
-A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.
+"product" 包是使用`composer create-project`下载并安装项目包之后由 `composer.json`指向实际的应用程序。
 
-## Descriptions of different composer.json files {#composerjson-overview}
+## 不同composer.json文件的说明 {#composerjson-overview}
 
-The following Magento components and product editions use a `composer.json` file.
+下面的Magento组件和产品版本使用一个`composer.json` 文件。
 
 ### Magento Root
 
-**Location:** `composer.json`
+**位置:** `composer.json`
 
-**Name:** `magento/magento2ce`
+**名称:** `magento/magento2ce`
 
-**Type:** `project`
+**类型:** `project`
 
-This is Magento's main `composer.json` file which declares dependencies and third-party components.
+这是Magento的主`composer.json`文件，它声明依赖项和第三方组件。
 
-Other root `composer.json` files use this file as a template.
-
----
-
-### {{site.data.var.ce}} project
-**Location:** `composer.json`
-
-**Name:** `magento/project-community-edition`
-
-**Type:** `project`
-
-Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ce}} product and its dependencies.
+其他root`composer.json`文件将此文件用作模板。
 
 ---
 
-### {{site.data.var.ee}} project
-**Location:** `composer.json`
+### {{site.data.var.ce}} 项目
+**位置:** `composer.json`
 
-**Name:** `magento/product-enterprise-edition`
+**名称:** `magento/project-community-edition`
 
-**Type:** `metapackage`
+**类型:** `project`
 
-Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ee}} product and its dependencies.
-
----
-
-### Magento Framework
-
-**Location:** `lib/internal/Magento/Framework/composer.json`
-
-**Name:** `magento/framework`
-
-**Type:** `magento2-library`
-
-The Magento application uses this `composer.json` file for its framework packages.
+Magento 系统集成者使用 `composer.json` 文件来部署{{site.data.var.ce}}产品及其依赖。
 
 ---
 
-### Module
+### {{site.data.var.ee}} 项目
+**位置:** `composer.json`
 
-**Locations:**
+**名称:** `magento/product-enterprise-edition`
+
+**类型:** `metapackage`
+
+Magento 系统集成者使用 `composer.json` 文件来部署{{site.data.var.ce}}产品及其依赖。
+
+---
+
+### Magento 框架
+
+**位置:** `lib/internal/Magento/Framework/composer.json`
+
+**名称:** `magento/framework`
+
+**类型:** `magento2-library`
+
+Magento 应用程序使用这个 `composer.json` 文件作为其框架包.
+
+---
+
+### 模块
+
+**位置:**
 
 *  `app/code/<vendor-name>/<module-name>/composer.json`
 *  `vendor/<vendor-name>/<module-name>/composer.json`
 
-**Name:** `<vendor-name>/<package-name>`
+**名称:** `<vendor-name>/<package-name>`
 
-**Type:** `magento2-module`
+**类型:** `magento2-module`
 
-The `composer.json` file for a [module](https://glossary.magento.com/module) extension declares external dependencies that it needs to function.
+[模块](https://glossary.magento.com/module)使用这个`composer.json`文件声明了扩展运行需要的依赖项。
 
 ---
 
-### Theme
+### 主题
 
-**Locations:**
+**位置:**
 
 *  `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
 *  `app/design/adminhtml/<vendor-name>/<theme-name>/composer.json`
 
-**Name:** `<vendor-name>/<package-name>`
+**名称:** `<vendor-name>/<package-name>`
 
-**Type:** `magento2-theme`
+**类型:** `magento2-theme`
 
-The `composer.json` file for a [theme](https://glossary.magento.com/theme) component contains parent theme dependencies the extension needs to inherit.
+[主题](https://glossary.magento.com/theme) 组件的`composer.json`文件 包含和继承了父主题的扩展和依赖项。
 
 ---
 
-### Language Package
+### 语言包
 
-**Location:**
+**位置:**
 `app/i18n/<vendor-name>/<language-code>/composer.json`
 
-**Name:** `<vendor-name>/<package-name>`
+**名称:** `<vendor-name>/<package-name>`
 
-**Type:** `magento2-language`
+**类型:** `magento2-language`
 
-For language packages, you must use the correct [ISO code][4]{:target="_blank"} for the language code in the `composer.json` file.
+对于语言包, 你必须对`composer.json`文件中的语言代码使用正确的[ISO 代码][4]{:target="_blank"}
 
 ---
 
-## Magento-specific package types
+## Magento-特定的包类型
 
-Magento extensions can be any of the following types:
+Magento扩展可以是以下任何类型：
 
-*  `magento2-module` for modules
-*  `magento2-theme` for themes
-*  `magento2-language` for language packages
-*  `magento2-component` for general extensions that do not fit any of the other types
+*  `magento2-module` 模块
+*  `magento2-theme` 主题
+*  `magento2-language` 语言包
+*  `magento2-component` 表示不适合任何其他类型的通用扩展
 
-The extension type tells the system where to install the directories and files of each extension in the Magento directory structure.
+扩展类型告诉系统在Magento目录结构中安装每个扩展的目录和文件的位置。
 
-## Naming conventions
+## 命名约定
 
-Since the namespace of a Composer package is global within a package repository, e.g. [packagist.org][2], use the following format when naming your package:
+由于Composer包的命名空间在包仓库中是全局的命名空间 [packagist.org][2], 因此在命名包时候请使用以下格式：
 
 `<vendor-name>/<package-name>`
 
-Using the Composer naming convention helps distinguish packages from different vendors with a low risk of overlapping.
+使用Composer命名约定有助于将软件包与不同的供应商区分开来，从而降低冲突的风险。
 
 ### vendor-name
 
-All letters in the vendor name must be in lowercase.
-For example, the vendor name format for extensions released by Magento Inc is `magento`.
+供应商名称中的所有字母都必须小写。
+例如，Magento Inc发布的扩展名的供应商名称格式是`magento`。
 
-#### Magento Marketplace Extensions
+#### Magento扩展市场
 
-Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+Magento Marketplace在扩展提交过程中使用 `vendor-name` 将扩展与供应商匹配。
+如果您计划将您的扩展提交到 [Magento Marketplace][7]{:target="_blank"}, 则您*必须*使用创建Marketplace帐户时创建或分配给您的唯一供应商名称。
 
-In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
+在`composer.json`文件中，将配置文件中的'Vendor Name'值用作扩展名的`vendor-name`部分。
 
-Please see the [Marketplace Documentation][5]{:target="_blank"} for more information about your unique vendor name.
+有关您的唯一供应商名称的详细信息，请参见 [Marketplace Documentation][5]{:target="_blank"}.
 
 ### package-name
 
-All letters in the `package-name` must be in lowercase.
+`package-name` 中的所有字母必须是小写。
 
-If the name contains more than one word, the Composer specification recommends separating them with dashes.
+如果名称包含多个单词，则编写器规范建议使用破折号分隔它们。
 
-The convention for Magento package names is the following
+Magento包名称的约定如下：
 
 `magento/<type-prefix>-<suffix>[-<suffix>]...`
 
-Where:
+在这里:
 
-:`type-prefix` is any of the Magento extension types:
+:`type-prefix` 是Magento的任何扩展类型:
 
-*  `module-` for module extensions
-*  `theme-` for theme extensions
-*  `language-` for language extensions
-*  `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
+*  `module-` 是对于模块的
+*  `theme-` 是对于扩展的
+*  `language-` 是对于语言包的
+*  `product-` 是对于[元包][8] 例如 {{site.data.var.ce}} 或者 {{site.data.var.ee}}
 
-: `suffix` is a unique identifier for extensions of that type.
+: `suffix` 是该类型扩展的唯一标识符。
 
-## Versioning {#component-version}
+## 版本管理 {#component-version}
 {% include php-dev/component-versioning.md %}
 
 ---
 
-**Next:**
-[Define your configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
+**下一步:**
+[定义配置文件]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
 [1]: {{ page.baseurl }}/comp-mgr/module-man/compman-start.html

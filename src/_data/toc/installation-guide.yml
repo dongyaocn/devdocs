@@ -1,67 +1,67 @@
-label: Installation Guide
+label: 安装指南
 pages:
-    - label: How to get the Magento software
+    - label: 如何获得Magento软件
       url: /install-gde/bk-install-guide.html
 
-    - label: Installation flow diagram
+    - label: 安装流程图
       url: /install-gde/install-flow-diagram.html
 
-    - label: Just the basics
+    - label: 基础
       children:
 
-        - label: Is the Magento software installed already?
+        - label: Magento软件已经安装了吗?
           url: /install-gde/basics/basics_magento-installed.html
 
-        - label: What operating system is my server running?
+        - label: 我的服务器运行什么操作系统?
           url: /install-gde/basics/basics_os-version.html
 
-        - label: How do I log in to my Magento server using a terminal, command prompt, or SSH?
+        - label: 如何使用终端、命令提示符或SSH登录Magento服务器?
           url: /install-gde/basics/basics_login.html
 
-        - label: What's the difference between a module and a component?
+        - label: 模块和组件之间的区别是什么?
           url: /install-gde/basics/basics_module.html
 
-        - label: What is the software that the Magento server needs to run?
+        - label: Magento服务器需要运行什么软件?
           url: /install-gde/basics/basics_software.html
 
-        - label: What is a docroot?
+        - label: 什么是 docroot?
           url: /install-gde/basics/basics_docroot.html
 
-    - label: Getting Started
+    - label: 入门
       children:
-        - label: Helpful resources
+        - label: 有用的资源
           url: /install-gde/install-resources-parent.html
           children:
 
-            - label: Installation quick reference (tutorial)
+            - label: 安装快速参考(教程)
               url: /install-gde/install-quick-ref.html
 
-            - label: Installation flow diagram
+            - label: 安装流程图
               url: /install-gde/install-resource-diagram.html
 
-            - label: Installation roadmap (reference)
+            - label: 安装路线图(参考)
               url: /install-gde/install-roadmap_part1.html
 
-        - label: Magento system requirements
+        - label: Magento 系统需求
           url: /install-gde/system-requirements.html
           children:
 
-            - label: Magento technology stack requirements
+            - label: Magento 技术堆栈需求
               url: /install-gde/system-requirements-tech.html
 
-            - label: Supported browsers
+            - label: 支持的浏览器
               url: /install-gde/system-requirements_browsers.html
 
-            - label: Transport Layer Security (TLS) requirements
+            - label: 传输层安全性(TLS)要求
               children:
 
-                - label: TLS 1.2 requirement for PayPal
+                - label: PayPal对TLS 1.2的要求
                   url: /install-gde/system-requirements_tls1-2.html
 
-                - label: TLS requirement for repo.magento.com
+                - label: repo.magento.com 对 TLS的要求
                   url: /install-gde/system-requirements_repo-tls1-2.html
 
-        - label: Prerequisites
+        - label: 先决条件
           url: /install-gde/prereq/prereq-overview.html
           children:
 
@@ -77,213 +77,213 @@ pages:
             - label: MySQL
               url: /install-gde/prereq/mysql.html
 
-            - label: Get your authentication keys
+            - label: 获取您的身份验证密钥
               url: /install-gde/prereq/connect-auth.html
 
-            - label: Magento file system ownership and permissions
+            - label: Magento 文件系统的所有权和权限
               children:
 
-                - label: Overview of ownership and permissions
+                - label: 所有权和权限概述
                   url: /install-gde/prereq/file-sys-perms-over.html
 
-                - label: Set pre-installation ownership and permissions
+                - label: 设置安装前的所有权和权限
                   url: /install-gde/prereq/file-system-perms.html
 
             - label: RabbitMQ
               url: /install-gde/prereq/install-rabbitmq.html
               
-            - label: Set up a remote MySQL database connection
+            - label: 设置一个远程MySQL数据库连接
               url: /install-gde/prereq/mysql_remote.html
 
             - label: SELinux and iptables
               url: /install-gde/prereq/security.html
 
-            - label: Optional software
+            - label: 可选的软件
               url: /install-gde/prereq/optional.html
 
-        - label: Get the Magento software
+        - label: 使用Magento软件
           url: /install-gde/install/get-software.html
 
-        - label: Install Magento using Composer
+        - label: 使用Composer安装Magento
           url: /install-gde/composer.html
 
-        - label: (Easy) Install the Magento archive on your server
+        - label: (容易)安装Magento档案在您的服务器
           url: /install-gde/prereq/zip_install.html
 
-        - label: (Contributor) Clone the Magento repository
+        - label: (Contributor)克隆Magento存储库
           url: /install-gde/prereq/dev_install.html
           children:
 
-            - label: Update installation dependencies
+            - label: 更新安装依赖关系
               url: /install-gde/install/prepare-install.html
 
-        - label: Get help with your installation
+        - label: 获得安装帮助
           url: /install-gde/install/get-help.html
 
-        - label: Install options
+        - label: 安装选项
           url: /install-gde/continue-to-install.html
 
-    - label: Setup Wizard Install
+    - label: 安装向导
       children:
-        - label: Installation roadmap (reference)
+        - label: 安装路线图(参考)
           url: /install-gde/install-roadmap_web.html
 
-        - label: Install optional sample data modules
+        - label: 安装可选的示例数据模块
           url: /install-gde/install/web/install-web-sample-data.html
           children:
 
-            - label: Install using Composer
+            - label: 使用 Composer 安装
               url: /install-gde/install/web/install-web-sample-data-composer.html
 
-            - label: Install by cloning repositories
+            - label: 通过克隆仓库安装
               url: /install-gde/install/web/install-web-sample-data-clone.html
 
-        - label: Setup Wizard installation
+        - label: Web安装向导安装
           url: /install-gde/install/web/install-web.html
           children:
 
-            - label: Step 1. Readiness check
+            - label: Step 1. 准备检查
               url: /install-gde/install/web/install-web_1-readiness.html
 
-            - label: Step 2. Add a Database
+            - label: Step 2. 添加一个数据库
               url: /install-gde/install/web/install-web_2-db.html
 
-            - label: Step 3. Web Configuration
+            - label: Step 3. 网络配置
               url: /install-gde/install/web/install-web_3-web-conf.html
 
-            - label: Step 4. Customize Your Store
+            - label: Step 4. 定制您的店铺
               url: /install-gde/install/web/install-web_4-customize-store.html
 
-            - label: Step 5. Create Admin Account
+            - label: Step 5. 创建管理员帐户
               url: /install-gde/install/web/install-web_5-create-admin.html
 
-            - label: Step 6. Install
+            - label: Step 6. 安装
               url: /install-gde/install/web/install-web_6-install.html
 
         - label: Post-installation
           url: /install-gde/continue-to-verify.html
 
-    - label: Command Line Installation
+    - label: 命令行安装
       children:
 
-        - label: Installation roadmap (reference)
+        - label: 安装路线图(参考)
           url: /install-gde/install-roadmap_cli.html
 
-        - label: Install optional sample data modules
+        - label: 安装可选的示例数据模块
           url: /install-gde/install/cli/install-cli-sample-data.html
           children:
 
-            - label: Install using Composer
+            - label: 使用 Composer 安装
               url: /install-gde/install/cli/install-cli-sample-data-composer.html
 
-            - label: Install by cloning repositories
+            - label: 通过克隆仓库安装
               url: /install-gde/install/cli/install-cli-sample-data-clone.html
 
-        - label: Install the Magento software using the command line
+        - label: 使用命令行安装Magento软件
           url: /install-gde/install/cli/install-cli.html
           children:
 
-            - label: Get started with the command-line installation
+            - label: 从命令行安装开始
               url: /install-gde/install/cli/install-cli-subcommands.html
 
-            - label: Install the Magento software
+            - label: 安装Magento软件
               url: /install-gde/install/cli/install-cli-install.html
 
-            - label: Uninstall or reinstall Magento
+            - label: 卸载或重新安装Magento
               url: /install-gde/install/cli/install-cli-uninstall.html
 
-            - label: Display or change the Admin URI
+            - label: 显示或更改管理URI
               url: /install-gde/install/cli/install-cli-adminurl.html
 
-            - label: Remove sample data modules or update sample data
+            - label: 删除示例数据模块或更新示例数据
               url: /install-gde/install/cli/install-cli-sample-data-other.html
 
-            - label: Enable or disable modules
+            - label: 启用或禁用模块
               url: /install-gde/install/cli/install-cli-subcommands-enable.html
 
-            - label: Uninstall modules
+            - label: 卸载模块
               url: /install-gde/install/cli/install-cli-uninstall-mods.html
 
-            - label: Create or update the deployment configuration
+            - label: 创建或更新部署配置
               url: /install-gde/install/cli/install-cli-subcommands-deployment.html
 
-            - label: Enable or disable maintenance mode
+            - label: 启用或禁用维护模式
               url: /install-gde/install/cli/install-cli-subcommands-maint.html
 
-            - label: Configure consumer behavior
+            - label: 配置消费行为
               url: /install-gde/install/cli/install-cli-subcommands-consumers.html
 
-            - label: Create the Magento database schema
+            - label: 创建Magento数据库模式
               url: /install-gde/install/cli/install-cli-subcommands-db.html
 
-            - label: Update the Magento database schema and data
+            - label: 更新Magento数据库模式和数据
               url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
 
-            - label: Configure the lock provider
+            - label: 配置 Lock Provider
               url: /install-gde/install/cli/install-cli-subcommands-lock.html
               
-            - label: Configure the store
+            - label: 配置店铺设置
               url: /install-gde/install/cli/install-cli-subcommands-store.html
 
-            - label: Create, edit, or unlock a Magento administrator account
+            - label: 创建、编辑或解锁Magento管理员帐户
               url: /install-gde/install/cli/install-cli-subcommands-admin.html
 
-            - label: Back up and roll back the file system, media, and database
+            - label: 备份并回滚文件系统、媒体和数据库
               url: /install-gde/install/cli/install-cli-backup.html
 
-            - label: Uninstall themes Composer packages
+            - label: 卸载主题 Composer packages
               url: /install-gde/install/cli/install-cli-theme-uninstall.html
 
-            - label: Uninstall language packages
+            - label: 卸载语言 Language packages
               url: /install-gde/install/cli/install-cli-uninstall-langpk.html
 
-        - label: Contributing developers—update, reinstall Magento
+        - label: 贡献开发人员-更新，重新安装Magento
           url: /install-gde/install/cli/dev_options.html
           children:
 
-            - label: Update the Magento application
+            - label: 更新Magento应用程序
               url: /install-gde/install/cli/dev_update-magento.html
 
-            - label: Add or update components
+            - label: 添加或更新组件
               url: /install-gde/install/cli/dev_add-update.html
 
-            - label: Change to a released version
+            - label: 更改为发布版本
               url: /install-gde/install/cli/dev_downgrade.html
 
-            - label: Reinstall the Magento software
+            - label: 重新安装Magento软件
               url: /install-gde/install/cli/dev_reinstall.html
 
-        - label: Post-installation
+        - label: 安装后
           url: /install-gde/continue-to-verify_cli.html
 
-    - label: Post Installation
+    - label: 安装后
       children:
-        - label: Verify the installation
+        - label: 验证安装
           url: /install-gde/install/verify.html
 
-        - label: Configure the Magento application
+        - label: 配置Magento应用程序
           url: /install-gde/install/post-install-config.html
 
-        - label: Optionally set a umask
+        - label: 可选地 设置一个 umask
           url: /install-gde/install/post-install-umask.html
 
-        - label: Appendix—Magento file system ownership and appendix (legacy)
+        - label: 附录- magento文件系统所有权和附录(legacy)
           url: /install-gde/install/legacy-file-system-perms.html
 
-        - label: Install sample data after Magento
+        - label: 在Magento之后安装示例数据
           url: /install-gde/install/sample-data-after-magento.html
           children:
 
-            - label: Install using Composer
+            - label: 使用 Composer 安装
               url: /install-gde/install/sample-data-after-composer.html
 
-            - label: Install by cloning repositories
+            - label: 使用仓库克隆安装
               url: /install-gde/install/sample-data-after-clone.html
 
-    - label: Troubleshooting
+    - label: 故障排除
       children:
 
-        - label: Access issues
+        - label: 访问问题
           children:
 
             - label: 503 (Service Unavailable) errors accessing Magento software in a web browser
@@ -295,7 +295,7 @@ pages:
             - label: Installation dependencies not met
               url: /install-gde/trouble/tshoot_install_depend.html
 
-    - label: How Tos
+    - label: 如何操作
       children:
-        - label: Modify docroot to improve security
+        - label: 修改 docroot 以提高安全性
           url: /install-gde/tutorials/change-docroot-to-pub.html

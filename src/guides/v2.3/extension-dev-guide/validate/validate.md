@@ -1,10 +1,11 @@
 ---
 group: php-developer-guide
-title: Validate
+title: 验证
 ---
 
-After your [module](https://glossary.magento.com/module) is built, you need to test it. Read through the Definition of Done to confirm that your module and coding practice is compliant with Magento.
+在您的[模块](https://glossary.magento.com/module)构建完成后，您需要测试它。阅读完成标准，确认您的模块和编码实践符合Magento。
 
-*  [Definition of done]({{ page.baseurl }}/contributor-guide/contributing_dod.html) in the Contributor Guide.
-*  [Coding Standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html)
-*  [Testing]({{ page.baseurl }}/extension-dev-guide/validate/test-module.html)
+*  [完成标准]({{ page.baseurl }}/contributor-guide/contributing_dod.html) 在贡献者指南中。
+*  [编码标准]({{ page.baseurl }}/coding-standards/bk-coding-standards.html)
+*  [测试]({{ page.baseurl }}/extension-dev-guide/validate/test-module.html)
+

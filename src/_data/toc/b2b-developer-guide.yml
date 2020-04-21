@@ -1,72 +1,72 @@
-label: B2B Developer Guide
+label: B2B 开发人员指南
 pages:
 
-    - label: Introduction
+    - label: 介绍
       url: /b2b/bk-b2b.html
 
-    - label: Integrate with B2B using REST
+    - label: 使用REST与B2B集成
       url: /b2b/integrations.html
       children:
 
-            - label: Company
+            - label: 公司
               children:
 
-                - label: Integrate with the Company module
+                - label: 与公司模块集成
                   url: /b2b/company.html
 
-                - label: Manage company objects
+                - label: 管理公司对象
                   url: /b2b/company-object.html
 
-                - label: Manage company users
+                - label: 管理公司用户
                   url: /b2b/company-users.html
 
-                - label: Manage company roles
+                - label: 管理公司角色
                   url: /b2b/roles.html
 
-                - label: Manage company structures
+                - label: 管理公司结构
                   url: /b2b/company-structures.html
 
-            - label: Company credit
+            - label: 公司信用
               children:
 
-                - label: Integrate with the CompanyCredit module
+                - label: 与公司信用模块集成
                   url: /b2b/company-credit.html
 
-                - label: Manage company credit
+                - label: 管理公司信用
                   url: /b2b/credit-manage.html
 
-            - label: Shared Catalog
+            - label: 共享目录
               children:
 
-                - label: Integrate with the SharedCatalog module
+                - label: 与SharedCatalog模块集成
                   url: /b2b/shared-catalog.html
 
-                - label: Manage shared catalogs
+                - label: 管理共享目录
                   url: /b2b/shared-cat-manage.html
 
-                - label: Assign categories and products
+                - label: 分配类别和产品
                   url: /b2b/shared-cat-product-assign.html
 
-                - label: Assign companies
+                - label: 指定公司
                   url: /b2b/shared-cat-company.html
 
-            - label: Negotiable Quotes
+            - label: 议价
               children:
 
-                - label: Integrate with the NegotiableQuote module
+                - label: 与议价模块集成
                   url: /b2b/negotiable-quote.html
 
-                - label: Manage negotiable quotes
+                - label: 管理议价
                   url: /b2b/negotiable-manage.html
 
-                - label: Update a negotiable quote
+                - label: 更新一个议价
                   url: /b2b/negotiable-update.html
 
-                - label: Negotiable quote checkout
+                - label: 议价结账
                   url: /b2b/negotiable-checkout.html
 
-                - label: Place a negotiable quote order
+                - label: 下一个议价订单
                   url: /b2b/negotiable-order-workflow.html
 
-    - label: Develop B2B extensions
+    - label: 开发B2B扩展
       url: /b2b/extensions.html

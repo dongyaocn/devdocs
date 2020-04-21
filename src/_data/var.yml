@@ -13,17 +13,17 @@
 
 # Product Name variables
 
-ce: Magento Open Source
-ee: Magento Commerce
-b2b: Magento Commerce for B2B
-mbi: Magento Business Intelligence
+ce: Magento 开源版
+ee: Magento 商业版
+b2b: Magento 商业版 for B2B
+mbi: Magento 商业智能
 
 # Cloud product name variables
 
 ece: Magento Commerce Cloud
 csuite: Magento Commerce Cloud Suite
 ct: ece-tools
-mcp-prod: Magento Cloud Patches
+mcp-prod: Magento 云补丁
 mcp: magento-cloud-patches
 mcd: magento-cloud-docker
 mcd-prod: Magento Cloud Docker
@@ -35,4 +35,4 @@ mcc: magento-cloud-components
 
 # Magento-developed extension (MDE) variables
 
-im: Inventory Management
+im: 库存管理

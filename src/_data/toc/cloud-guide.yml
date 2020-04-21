@@ -1,39 +1,39 @@
-label: Magento Commerce Cloud
-project-webint-basiclabel: Magento Commerce Cloud Guide
+label: Magento 商业版云
+project-webint-basiclabel: Magento 商业版云指南
 pages:
-    - label: Overview
+    - label: 概述
       url: /cloud/bk-cloud.html
       versionless: true
       children:
-        - label: Onboarding tasks
+        - label: 用户引导任务
           url: /cloud/onboarding/onboarding-tasks.html
           versionless: true
 
-    - label: Architecture
+    - label: 体系架构
       url: /cloud/architecture/cloud-architecture.html
       versionless: true
       children:
-        - label: Starter architecture
+        - label: 启动程序框架
           url: /cloud/basic-information/starter-architecture.html
           versionless: true
 
-        - label: Starter develop and deploy workflow
+        - label: Starter开发和部署工作流
           url: /cloud/basic-information/starter-develop-deploy-workflow.html
           versionless: true
 
-        - label: Pro architecture
+        - label: 专业架构
           url: /cloud/architecture/pro-architecture.html
           versionless: true
 
-        - label: Pro develop and deploy workflow
+        - label: 专业开发和部署工作流
           url: /cloud/architecture/pro-develop-deploy-workflow.html
           versionless: true
 
-        - label: Scaled architecture
+        - label: 可扩展架构
           url: /cloud/architecture/scaled-architecture.html
           versionless: true
 
-    - label: Technologies and requirements
+    - label: 技术和要求
       url: /cloud/requirements/cloud-requirements.html
       versionless: true
       children:
@@ -41,11 +41,11 @@ pages:
           url: /cloud/reference/cloud-composer.html
           versionless: true
 
-        - label: Magento Cloud CLI
+        - label: Magento云客户端
           url: /cloud/reference/cli-ref-topic.html
           versionless: true
 
-        -  label: ece-tools package
+        -  label: ece-工具包
            url: /cloud/reference/ece-tools-reference.html
            versionless: true
 
@@ -65,35 +65,35 @@ pages:
           url: /cloud/project/sendgrid.html
           versionless: true
 
-    - label: Local development setup
+    - label: 本地开发设置
       url: /cloud/setup/first-time-setup.html
       versionless: true
       children:
-        - label: Prepare for manual setup
+        - label: 准备手动设置
           url: /cloud/before/before-workspace.html
           versionless: true
           children:
-            - label: Install Magento prerequisites
+            - label: 安装Magento必备组件
               url: /cloud/before/before-workspace-magento-prereqs.html
               versionless: true
 
-            - label: Enable SSH keys
+            - label: 启用SSH密钥
               url: /cloud/before/before-workspace-ssh.html
               versionless: true
 
-            - label: Set up the Magento file system owner
+            - label: 设置Magento文件系统所有者
               url: /cloud/before/before-workspace-file-sys-owner.html
               versionless: true
 
-            - label: Clone and branch the project
+            - label: 克隆并分支项目
               url: /cloud/before/before-setup-env-2_clone.html
               versionless: true
 
-            - label: Install Magento
+            - label: 安装Magento
               url: /cloud/before/before-setup-env-install.html
               versionless: true
 
-            - label: First time deployment
+            - label: 首次部署
               url: /cloud/setup/first-time-deploy.html
               versionless: true
 
@@ -101,213 +101,213 @@ pages:
           url: /cloud/howtos/debug.html
           versionless: true
 
-        - label: Optional - Install sample data
+        - label: 可选-安装示例数据
           url: /cloud/howtos/sample-data.html
           versionless: true
 
-    - label: Docker development
+    - label: Docker开发
       url: /cloud/docker/docker-development.html
       versionless: true
       children:
-        - label: Docker container architecture
+        - label: Docker容器架构
           url: /cloud/docker/docker-containers.html
           versionless: true
           children:
-            - label: Service containers
+            - label: 服务容器
               url: /cloud/docker/docker-containers-service.html
               versionless: true
     
-            - label: CLI containers
+            - label: CLI容器
               url: /cloud/docker/docker-containers-cli.html
               versionless: true
               
-            - label: Synchronizing data
+            - label: 同步数据
               url: /cloud/docker/docker-syncing-data.html
               versionless: true
               
-        - label: Configure Docker
+        - label: 配置Docker
           url: /cloud/docker/docker-config.html
           versionless: true
           children:
-            - label: Xdebug for Docker
+            - label: Docker的Xdebug
               url: /cloud/docker/docker-development-debug.html
               versionless: true
 
-            - label: Manage the database
+            - label: 管理数据库
               url: /cloud/docker/docker-manage-database.html
               versionless: true
 
-            - label: Manage cron jobs
+            - label: 管理cron作业
               url: /cloud/docker/docker-manage-cron-jobs.html
               versionless: true
   
-            - label: Extend Docker
+            - label: 扩展Docker
               url: /cloud/docker/docker-extend.html
               versionless: true
 
-        - label: Launch Docker
+        - label: 启动Docker
           children: 
-            - label: Developer mode
+            - label: 开发模式
               url: /cloud/docker/docker-mode-developer.html
               versionless: true
 
-            - label: Production mode
+            - label: 生产模式
               url: /cloud/docker/docker-mode-production.html
               versionless: true
 
-        - label: Functional Testing
+        - label: 功能测试
           children:
-            - label: Magento application testing
+            - label: Magento应用程序测试
               url: /cloud/docker/docker-mftf.html
               versionless: true
 
-            - label: ECE-Tools testing
+            - label: ECE-工具测试
               url: /cloud/docker/docker-development-testing.html
               versionless: true
 
-        - label: Docker quick reference
+        - label: Docker快速参考
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
           
-    - label: Integrations
+    - label: 集成
       url: /cloud/integrations/cloud-integrations.html
       versionless: true
       children:
-        - label: Bitbucket integration
+        - label: Bitbucket集成
           url: /cloud/integrations/bitbucket-integration.html
           versionless: true
 
-        - label: GitHub integration
+        - label: GitHub集成
           url: /cloud/integrations/github-integration.html
           versionless: true
 
-        - label: GitLab integration
+        - label: GitLab集成
           url: /cloud/integrations/gitlab-integration.html
           versionless: true
 
-        - label: Health notifications
+        - label: 健康通知
           url: /cloud/integrations/health-notifications.html
           versionless: true
 
-    - label: Import existing code into a project
+    - label: 将现有代码导入项目
       url: /cloud/setup/first-time-setup-import-first-steps.html
       versionless: true
       children:
-        - label: Prepare your existing Magento Commerce system
+        - label: 导入Magento商业版代码前的准备
           url: /cloud/setup/first-time-setup-import-prepare.html
           versionless: true
 
-        - label: Import Magento Commerce code
+        - label: 导入Magento商业版代码
           url: /cloud/setup/first-time-setup-import-import.html
           versionless: true
 
-    - label: Configure your store
+    - label: 配置存储
       url: /cloud/configure/configuration-overview.html
       versionless: true
       children:
-        - label: Best practices for store configuration
+        - label: 存储配置的最佳实践
           url: /cloud/configure/configure-best-practices.html
           versionless: true
 
-        - label: Set up PayPal
+        - label: 注册 PayPal
           url: /cloud/live/paypal-onboarding.html
           versionless: true
 
-        - label: Set up Magento B2B
+        - label: 设置 Magento B2B
           url: /cloud/configure/setup-b2b.html
           versionless: true
 
-        - label: Set up cron jobs
+        - label: 设置cron作业
           url: /cloud/configure/setup-cron-jobs.html
           versionless: true
 
-        - label: Set up multiple Cloud websites or stores
+        - label: 建立多个云网站或云商店
           url: /cloud/project/project-multi-sites.html
           versionless: true
 
-        - label: Install, manage, and upgrade modules
+        - label: 安装、管理和升级模块
           url: /cloud/howtos/install-components.html
           versionless: true
 
-        - label: Install a theme
+        - label: 安装主题
           url: /cloud/howtos/custom-theme.html
           versionless: true
 
-        - label: Import URL Rewrites
+        - label: 导入URL重写
           url: /cloud/configure/import-url-rewrites.html
           versionless: true
 
-    - label: Configure Fastly services
+    - label: 配置Fastly服务
       url: /cloud/cdn/cloud-fastly.html
       versionless: true
       children:
-        - label: Set up Fastly
+        - label: 设置 Fastly
           url: /cloud/cdn/configure-fastly.html
           versionless: true
           children:
-            - label: Customize error and maintenance pages
+            - label: 自定义错误和维护页面
               url: /cloud/cdn/cloud-fastly-custom-response.html
               versionless: true
 
-        - label: Web Application Firewall
+        - label: Web应用防火墙
           url: /cloud/cdn/fastly-waf-service.html
           versionless: true
 
-        - label: Image Optimization
+        - label: 图像优化
           url: /cloud/cdn/fastly-image-optimization.html
           versionless: true
 
-        - label: Custom VCL snippets
+        - label: 自定义VCL片段
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           versionless: true
 
           children:
-            - label: Reroute requests to a CMS backend
+            - label: 将请求重新路由到CMS后端
               url: /cloud/cdn/fastly-vcl-wordpress.html
               versionless: true
 
-            - label: Block referral spam
+            - label: 阻止推荐垃圾邮件
               url: /cloud/cdn/fastly-vcl-badreferer.html
               versionless: true
 
-            - label: Custom VCL for IP allow list
+            - label: 自定义VCLIP白名单
               url: /cloud/cdn/fastly-vcl-whitelist.html
               versionless: true
 
-            - label: Custom VCL for IP block list
+            - label: 自定义VCLIP黑名单
               url: /cloud/cdn/fastly-vcl-blocking.html
               versionless: true
 
-        - label: Fastly troubleshooting
+        - label: Fastly 故障排除
           url: /cloud/cdn/trouble-fastly.html
           versionless: true
 
-    - label: Configure environments
+    - label: 配置环境
       url: /cloud/env/environments.html
       versionless: true
       children:
-        - label: Application
+        - label: 应用程序
           url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
           children:
-            - label: Set cache for static files
+            - label: 为静态文件设置缓存
               url: /cloud/project/set-cache.html
               versionless: true
 
-        - label: Build and deploy
+        - label: 构建和部署
           url: /cloud/project/magento-env-yaml.html
           versionless: true
 
           children:
-            - label: Set up notifications
+            - label: 设置通知
               url: /cloud/env/setup-notifications.html
               versionless: true
 
-            - label: Logging handlers
+            - label: 日志处理程序
               url: /cloud/env/log-handlers.html
               versionless: true
 
-        - label: Environment variables
+        - label: 环境变量
           url: /cloud/env/variables-intro.html
           versionless: true
           children:
@@ -339,7 +339,7 @@ pages:
               url: /cloud/env/working-with-variables.html
               versionless: true
     
-        - label: Routes
+        - label: 路由
           url: /cloud/project/project-conf-files_routes.html
           versionless: true
           children:
@@ -355,215 +355,215 @@ pages:
               url: /cloud/project/project-routes-more-ssi.html
               versionless: true
 
-        - label: Services
+        - label: 服务
           url: /cloud/project/project-conf-files_services.html
           versionless: true
           children:
-            - label: Set up MySQL service
+            - label: 设置MySQL服务
               url: /cloud/project/project-conf-files_services-mysql.html
               versionless: true
 
-            - label: Set up Redis service
+            - label: 设置Redis服务
               url: /cloud/project/project-conf-files_services-redis.html
               versionless: true
 
-            - label: Set up Elasticsearch service
+            - label: 设置Elasticsearch服务
               url: /cloud/project/project-conf-files_services-elastic.html
               versionless: true
     
-            - label: Set up RabbitMQ service
+            - label: 设置RabbitMQ服务
               url: /cloud/project/project-conf-files_services-rabbit.html
               versionless: true
 
-        - label: Restore an environment
+        - label: 恢复环境
           url: /cloud/env/restore-environment.html
           versionless: true
 
-    - label: Configuration management for store settings
+    - label: 存储设置的配置管理
       url: /cloud/live/sens-data-over.html
       versionless: true
       children:
-        - label: Example of managing system-specific settings
+        - label: 管理系统特定设置的示例
           url: /cloud/live/sens-data-initial.html
           versionless: true
 
-    - label: Manage your project
+    - label: 管理项目
       url: /cloud/project/projects.html
       versionless: true
       children:
 
-        - label: Configure your project
+        - label: 配置项目
           url: /cloud/project/project-webint-basic.html
           versionless: true
 
-        - label: Project structure
+        - label: 项目结构
           url: /cloud/project/project-start.html
           versionless: true
 
-        - label: Log locations
+        - label: 日志位置
           url: /cloud/project/log-locations.html
           versionless: true
 
-        - label: Create and manage users
+        - label: 创建和管理用户
           url: /cloud/project/user-admin.html
           versionless: true
 
-        - label: Manage branches with the Interface
+        - label: 使用接口管理分支
           url: /cloud/project/project-webint-branch.html
           versionless: true
 
-        - label: Manage branches with the CLI
+        - label: 使用CLI管理分支
           url: /cloud/env/environments-start.html
           versionless: true
 
-        - label: Profile database queries
+        - label: 数据库查询分析
           url: /cloud/project/profile-database-queries.html
           versionless: true
 
-        - label: Manage disk space
+        - label: 管理磁盘空间
           url: /cloud/project/manage-disk-space.html
           versionless: true
 
-        - label: Monitor performance
+        - label: 监控性能
           url: /cloud/project/monitor-performance.html
           versionless: true
 
-        - label: Snapshots and backup management
+        - label: 快照和备份管理
           url: /cloud/project/project-webint-snap.html
           versionless: true
 
-    - label: Optimize deployment
+    - label: 优化部署
       url: /cloud/deploy/optimize-cloud-deployment.html
       versionless: true
       children:
-        - label: Cloud deployment process
+        - label: 云部署过程
           url: /cloud/deploy/cloud-deployment-process.html
           versionless: true
 
-        - label: Scenario-based deployment
+        - label: 基于场景的部署
           url: /cloud/deploy/scenario-based-deployment.html
           versionless: true
 
-        - label: Zero downtime deployment
+        - label: 零停机部署
           url: /cloud/deploy/reduce-downtime.html
           versionless: true
 
-        - label: Static content deployment
+        - label: 静态内容部署
           url: /cloud/deploy/static-content-deployment.html
           versionless: true
 
-        - label: Smart wizards
+        - label: 智能向导
           url: /cloud/deploy/smart-wizards.html
           versionless: true
-    - label: Deploy your store
+    - label: 部署存储
       url: /cloud/live/stage-prod-live.html
       versionless: true
       children:
-        - label: Deployment process
+        - label: 部署过程
           url: /cloud/reference/discover-deploy.html
           versionless: true
 
-        - label: Continuous deployment
+        - label: 连续部署
           url: /cloud/deploy/continuous-deployment.html
           versionless: true
 
-        - label: Protective block
+        - label: 保护块
           url: /cloud/live/live-prot.html
           versionless: true
 
-        - label: Build and deploy on local
+        - label: 在本地生成和部署
           url: /cloud/live/live-sanity-check.html
           versionless: true
 
-        - label: Prepare to deploy to Staging and Production
+        - label: 准备分阶段部署和生产
           url: /cloud/live/stage-prod-migrate-prereq.html
           versionless: true
 
-        - label: Deploy code and migrate static files and data
+        - label: 部署代码并迁移静态文件和数据
           url: /cloud/live/stage-prod-migrate.html
           versionless: true
 
-        - label: Test deployment
+        - label: 测试部署
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-    - label: Go live and launch
+    - label: 上线和运行
       url: /cloud/live/live.html
       versionless: true
       children:
-        - label: Go live checklist
+        - label: 上线检查表
           url: /cloud/live/go-live-checklist.html
           versionless: true
 
-        - label: Launch steps
+        - label: 启动步骤
           url: /cloud/live/launch-steps.html
           versionless: true
 
-    - label: Troubleshooting
+    - label: 故障排除
       url: /cloud/trouble/trouble.html
       versionless: true
       children:
-        - label: Troubleshoot deployment
+        - label: 部署疑难解答
           url: /cloud/trouble/troubleshoot-deployment.html
           versionless: true
 
-        - label: Incorrect credentials
+        - label: 凭据不正确
           url: /cloud/trouble/trouble_ce-creds.html
           versionless: true
 
-        - label: Resolve issues with a new project
+        - label: 用新项目解决问题
           url: /cloud/trouble/trouble_proj-startover.html
           versionless: true
 
-        - label: Component deployment failure
+        - label: 组件部署失败
           url: /cloud/trouble/trouble_comp-deploy-fail.html
           versionless: true
 
-        - label: Resolve issues with encryption key
+        - label: 解决加密密钥问题
           url: /cloud/trouble/trouble-crypt-key-variable.html
           versionless: true
 
-        - label: Resolve issues with HTML minification
+        - label: 解决HTML缩小问题
           url: /cloud/trouble/trouble-error-html-minification.html
           versionless: true
 
-        - label: Resolve issues with Google Analytics during deployment
+        - label: 解决部署期间的谷歌分析问题
           url: /cloud/trouble/trouble-google-analytics-deploy.html
           versionless: true
 
-        - label: Site availability
+        - label: 站点可用性
           url: /cloud/trouble/site-availability.html
           versionless: true
 
-        - label: Add site map and search engine robots
+        - label: 添加站点地图和搜索引擎机器人
           url: /cloud/trouble/robots-sitemap.html
           versionless: true
 
-        - label: Theme troubleshooting
+        - label: 主题疑难解答
           url: /cloud/trouble/theme-troubleshooting.html
           versionless: true
 
-    - label: Upgrades and patches
+    - label: 升级和修补程序
       url: /cloud/project/project-upgrade-parent.html
       versionless: true
       children:
-        - label: Update ece-tools version
+        - label: 更新 ece-tools 版本
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
-        - label: Apply patches
+        - label: 应用修补程序
           url: /cloud/project/project-patch.html
           versionless: true
 
-        - label: Upgrade Magento version
+        - label: 升级Magento版本
           url: /cloud/project/project-upgrade.html
           versionless: true
 
-        - label: Upgrade to use ece-tools
+        - label: 使用ece-tool工具升级
           url: /cloud/project/ece-tools-upgrade-project.html
           versionless: true
 
-    - label: Release notes
+    - label: 发行说明
       url: /cloud/release-notes/cloud-tools.html
       versionless: true
       children:
@@ -571,18 +571,18 @@ pages:
           url: /cloud/release-notes/ece-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Patches
+        - label: Magento云补丁
           url: /cloud/release-notes/mcp-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Docker
+        - label: Magento云Docker
           url: /cloud/release-notes/mcd-release-notes.html
           versionless: true
 
-        - label: Magento Cloud Components
+        - label: Magento云组件
           url: /cloud/release-notes/mcc-release-notes.html
           versionless: true
 
-        - label: Backward incompatible changes
+        - label: 向后不兼容的更改
           url: /cloud/release-notes/backward-incompatible-changes.html
           versionless: true

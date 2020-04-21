@@ -1,30 +1,30 @@
 ---
 group: php-developer-guide
-title: Create a cache type
+title: 创建缓存类型
 ---
 
-A *cache type* enables you to specify what is cached and enables merchants to clear that [cache type](https://glossary.magento.com/cache-type) using the [Cache](https://glossary.magento.com/cache) Management page in the [Magento Admin](https://glossary.magento.com/magento-admin).
+  *缓存类型*允许您指定缓存的内容，并允许商家使用 [Magento 管理后台](https://glossary.magento.com/magento-admin)中的 [缓存](https://glossary.magento.com/cache) 管理页面清除该[缓存类型](https://glossary.magento.com/cache-type).
 
-The tag *scope* provides a mechanism for a cache type.
+标记*作用域*为缓存类型提供了一种机制。
 
-## Cache type configuration {#m2devgde-cache-type-configuration}
+## 缓存类型配置 {#m2devgde-cache-type-configuration}
 
-Declare a new cache type in the `etc/cache.xml` file with the following attributes:
+在 `etc/cache.xml` 文件中声明具有以下属性的新缓存类型:
 
-| Attribute | Required? | Description |
+| 属性 | 必须? | 描述 |
 | --- | --- | --- |
-| `name` | Yes | A unique cache type ID |
-| `translate` | No | Parameters that will be translated on the "Cache Management" page |
-| `instance` | Yes | The cache type model class |
+| `name` | 是 | 唯一的缓存类型ID |
+| `translate` | 否 | 将在"缓存管理"页上转换的参数 |
+| `instance` | 是 | 缓存类型模型类 |
 
-Also, cache type configuration have the following required parameters:
+此外，缓存类型配置具有以下必需参数：
 
-| Parameter | Description |
+| 参数 | 描述 |
 | --- | --- |
-| `label` | The "Cache Type" field to be displayed on the `System` > `Tools` > `Cache Management` page. |
-| `description` | The "Description" field to be displayed on the `System` > `Tools` > `Cache Management` page. |
+| `label` | "缓存类型"字段将显示在 `System` > `Tools` > `Cache Management` 页面. |
+| `description` | "说明"字段将显示在 `System` > `Tools` > `Cache Management` 页面. |
 
-For example:
+例如:
 
 ```xml
 <?xml version="1.0"?>
@@ -36,9 +36,9 @@ For example:
 </config>
 ```
 
-You may declare multiple cache types.
+可以声明多个缓存类型。
 
-## Cache type model {#m2devgde-cache-type-model}
+## 缓存类型模型 {#m2devgde-cache-type-model}
 
 ```php
 <?php
@@ -75,11 +75,11 @@ class CacheType extends TagScope
 }
 ```
 
-You must specify the following parameters:
+必须指定以下参数：
 
-*  `VendorName\ModuleName` defines the name of a [module](https://glossary.magento.com/module) that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
-*  `%cache_type_id%` defines the unique identifier of a cache type.
-*  `%CACHE_TYPE_TAG%` defines the unique tag to be used in the cache type scoping.
+*  `VendorName\ModuleName` 定义使用缓存类型的[模块](https://glossary.magento.com/module)的名称。一个模块可以使用多个缓存类型，一个缓存类型可以在多个模块中使用。
+*  `%cache_type_id%` 定义缓存类型的唯一标识符。
+*  `%CACHE_TYPE_TAG%` 定义要在缓存类型作用域中使用的唯一标记。
 
 [tagscope]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Cache/Type/Notification.php

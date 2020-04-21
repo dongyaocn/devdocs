@@ -1,37 +1,37 @@
-label: Coding Standards
+label: 编码标准
 pages:
-    - label: Coding Standards
+    - label: 编码标准
       url: /coding-standards/bk-coding-standards.html
       children:
 
-        - label: Code demarcation standard
+        - label: 代码划分标准
           url: /coding-standards/code-standard-demarcation.html
 
-        - label: PHP coding standard
+        - label: PHP编码标准
           url: /coding-standards/code-standard-php.html
 
-        - label: DocBlock standard
+        - label: DocBlock标准
           url: /coding-standards/docblock-standard-general.html
 
-        - label: JavaScript coding standard
+        - label: JavaScript编码标准
           url: /coding-standards/code-standard-javascript.html
 
-        - label: JavaScript DocBlock standard
+        - label: JavaScript DocBlock标准
           url: /coding-standards/docblock-standard-javascript.html
 
-        - label: jQuery widget coding standard
+        - label: jQuery小部件编码标准
           url: /coding-standards/code-standard-jquery-widgets.html
 
-        - label: LESS coding standard
+        - label: LESS 编码标准
           url: /coding-standards/code-standard-less.html
 
-        - label: HTML style guide
+        - label: HTML样式指南
           url: /coding-standards/code-standard-html.html
 
-    - label: Technical guidelines
+    - label: 技术指南
       url: /coding-standards/technical-guidelines.html
 
-    - label: Technical vision
+    - label: 技术视野
       url: /coding-standards/technical-vision/index.html
       children:
 

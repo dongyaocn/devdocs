@@ -1,8 +1,8 @@
 ---
-group: installation-guide
-subgroup: Getting Started
-title: TLS 1.2 requirement for PayPal
-menu_title: TLS 1.2 requirement for PayPal
+group: 安装指南
+subgroup: 入门
+title: PayPal对TLS 1.2的要求
+menu_title: PayPal对TLS 1.2的要求
 menu_node:
 menu_order: 101
 level3_menu_node: level3child

@@ -1,55 +1,57 @@
 ---
 group: php-developer-guide
-title: Glossary of common terms
+title: 通用术语表
 ---
 
-### Component {#gloss-component}
+### 组件 {#gloss-component}
 
-We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A [Magento component](https://glossary.magento.com/magento-component) can be classified into the following *types*:
+我们将您编写的代码称之为 *组件*. (Composer 称之为 <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*包*</a>;  这里的组件和包是一样的意思。)  
 
-*  [Module](https://glossary.magento.com/module) (extend Magento capabilities)
-*  [Theme](https://glossary.magento.com/theme) (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
-*  [Language package](https://glossary.magento.com/language-package) (localize the storefront and Admin)
+[Magento 组件](https://glossary.magento.com/magento-component) 可以分为以下几种*类型*:
 
-You can *package* your components as follows:
+*  [模块](https://glossary.magento.com/module) (扩展 Magento 功能)
+*  [主题](https://glossary.magento.com/theme) (改变 [店面](https://glossary.magento.com/storefront) 和 管理后台 的视觉感官)
+*  [语言包](https://glossary.magento.com/language-package) (本地化 店面 和 管理后台)
 
-*  Individually
-*  As a [metapackage](https://getcomposer.org/doc/04-schema.md#type), which is a Magento Marketplace requirement if you're developing a product that has more than one component.
+你可以把你的组件打包如下:
 
-   A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on.
+* 单独的
 
-   More information about metapackages can be found in the next section.
+*  如果您开发的产品有多个组件，可以作为一个 [元包](https://getcomposer.org/doc/04-schema.md#type)。这是Magento Marketplace的要求。
+
+   元包由*共享包*组成。例如：由模块和主题、两个模块、两个主题等组成的元包。
+有关元包的更多信息可以在下一节中找到。
 
  {:.bs-callout-info}
-Magento Marketplace uses the blanket term *product* to refer to a component or a [metapackage](https://glossary.magento.com/metapackage).
+Magento Marketplace把综合产品叫做组件或[元包](https://glossary.magento.com/metapackage).
 
-### Metapackage {#gloss-meta}
+### 元包 {#gloss-meta}
 
-Magento Marketplace requires more than one component to be packaged as a *metapackage*, which consists of only a `composer.json` that specifies individual components and their dependencies. (Magento Marketplace also refers to a metapackage as an *extension*.)
+Magento Marketplace要求将多个组件打包为*元包*，该组件仅由指定单个组件及其依赖项的`composer.json`组成。（Magento Marketplace还将元包称为*扩展*）
 
-A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
+元包需要或建议我们称为*共享包*的组件。如果愿意，可以在多个元包中使用共享包。（如果使用共享包，Marketplace要求元包中的*所有*组件都是共享包。）
 
-For example, you might want to list two metapackages in the Magento Marketplace---a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the <a href="#gloss-compman">Magento Component Manager</a>.
+例如，您可能希望在Magento Marketplace中列出两个元软件包：标准软件包和高级软件包。所有的标准包组件都可以是高级包使用的共享包。除此之外，这使商家能够使用<a href="#gloss-compman">Magento组件管理器</a>轻松地从您的标准包升级到您的高级包。
 
-Merchants do not need to understand that, under the covers, some packages are shared.
+商家不需要明白，在封装下，有些包是共享的。
 
 {:.bs-callout-warning}
-You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Magento Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html){:target="_blank"}.
+您可以上传到Magento Marketplace，只要您想，但您必须明确地给予组件访问它们的权限。否则，您的组件在被商家安装后将无法正常工作。有关更多信息，请参见 [Magento Marketplace 用户指南](http://docs.magento.com/marketplace/user_guide/getting-started.html){:target="_blank"}.
 
 {:.ref-header}
-Related topics
+相关主题
 
-*  [metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
-*  [component types in `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
+*  [元包]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
+*  [`composer.json`中的组件类型]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
-### Component Manager {#gloss-compman}
+### 组件管理器 {#gloss-compman}
 
-Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
+商家使用 [组件管理器]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (Magento 管理后台的一部分) 执行以下任何操作:
 
-*  Install, uninstall
-*  Update
-*  Enable, disable
+*  安装, 卸载
+*  更新
+*  启用, 禁用
 
-If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
+如果您按照本指南和<em>市场用户指南</em>中的说明打包和上载组件，则商家可以在您发布组件后轻松更新它们。
 
-For details, see [Run the Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html)
+详细情况， 查看 [运行扩展管理器]({{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html)

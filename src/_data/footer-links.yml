@@ -1,20 +1,20 @@
-- label: Become a Contributor
+- label: 成为一个贡献者
   url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 
-- label: Glossary
+- label: 术语表
   url: https://glossary.magento.com/
 
-- label: Privacy Policy
+- label: 隐私政策
   url: https://magento.com/legal/terms/privacy/
 
-- label: Terms of Service
+- label: 服务条款
   url: https://magento.com/legal/terms/
 
-- label: License/Trademark FAQ
+- label: 许可/商标 常见问题解答
   url: https://magento.com/legal/licensing/
 
-- label: Release Notes
+- label: 发行说明
   url: /release-notes/bk-release-notes.html
 
-- label: Third-Party Licenses
+- label: 第三方许可
   url: /release-notes/packages-open-source.html

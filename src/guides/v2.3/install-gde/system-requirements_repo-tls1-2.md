@@ -1,6 +1,6 @@
 ---
-group: installation-guide
-title: TLS requirement for repo.magento.com
+group: 安装指南
+title: repo.magento.com对TLS的要求
 functional_areas:
   - Install
   - System
@@ -9,9 +9,9 @@ functional_areas:
 
 {% include install/tls-repo.md %}
 
-### Solution
+### 解决方案
 
-The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:
+此问题的解决方案取决于操作系统如何打包TLS。有关详细信息，请参阅以下部分之一：
 
 *  [Ubuntu](#solution-ubuntu)
 *  [CentOS](#solution-centos)
@@ -19,9 +19,8 @@ The solution to this issue depends on how your operating system packages TLS. Se
 
 #### Ubuntu {#solution-ubuntu}
 
-Make sure you're using [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"}. `libcurl` versions 7.34 or later; these versions use TLS 1.2 by default.
-
-To determine your `libcurl` version, enter the following command:
+确保您使用的是[`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"}。`libcurl'versions 7.34`或更高版本；这些版本默认使用TLS 1.2。
+要确定`libcurl`版本，请输入以下命令：
 
 ```bash
 curl --version
@@ -29,18 +28,17 @@ curl --version
 
 #### CentOS {#solution-centos}
 
-The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} [library](https://glossary.magento.com/library) packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.
-
-To determine the version of CentOS your server runs, enter the following command:
+问题的根源是，[`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"}[库]（https://glossary.magento.com/library）与CentOS 6.6及更早版本一起打包，默认使用TLS 1.1或更早版本。
+要确定服务器运行的CentOS版本，请输入以下命令：
 
 ```bash
 cat /etc/*release*
 ```
 
-If you're already running CentOS 6.8 or later, no action is necessary. According to the [CentOS 6.8 changelog](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8){:target="_blank"}, "various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages".
-
-(CentOS 7 has a newer version of `libcurl` that also defaults to TLS 1.2.)
+如果您已经在运行CentOS 6.8或更高版本，则无需执行任何操作。根据[CentOS 6.8 changelog](https://wiki.CentOS.org/Manuals/ReleaseNotes/CentOS6.8){:target="blank"}，现在各种应用程序都支持TLS 1.2，即OpenLDAP、yum、stunnel、vsftpd、git、postfix等。此外，TLS 1.2在默认情况下已在各种软件包中启用。
+（CentOS 7有一个新版本的`libcurl`，默认为TLS 1.2。）
 
 #### Mac OS {#solution-macos}
 
-Recent updates to the [OS X liip package](http://php-osx.liip.ch){:target="_blank"} should resolve the issue.
+最近对[OS X liip包](http://php-osx.liip.ch){:target="_blank"}的更新应该可以解决这个问题。
+

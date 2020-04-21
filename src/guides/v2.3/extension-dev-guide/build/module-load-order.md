@@ -1,28 +1,28 @@
 ---
 group: php-developer-guide
 subgroup: 03_Build
-title: Component load order
-menu_title: Component load order
+title: 组件加载顺序
+menu_title: 组件加载顺序
 menu_order: 7000
 ---
 
-You may need to specify your component's dependency on other components or files from other components using your component's [composer.json]({{ page.baseurl }}/extension-dev-guide/build/create_component.html#add-component-xml). Further, you can specify a load order in your component's `module.xml` file using the `<sequence>` tag to ensure that needed files from other components are already loaded when your component loads.
+你可能需要使用组件的 [composer.json]({{ page.baseurl }}/extension-dev-guide/build/create_component.html#add-component-xml)指定组件对其他组件或来自其他组件文件的依赖性。 进一步，你可以使用 `module.xml`文件中的`<sequence>` 标签确保在加载组件时，已经加载了其他组件中需要的文件。
 
-`<sequence>` declares the list of components that must be loaded before the current component is loaded. It's used for loading different kind of files: configuration files, view files (including CSS, Less, and template files), or setup classes. Note that `<sequence>` does not affect the loading of regular classes (non-setup classes).
-*Setup* classes are classes in the component that create or update [database schema](https://glossary.magento.com/database-schema) or data.
+`<sequence>` 声明在加载当前组件之前必须加载的组件列表。它用于加载不同类型的文件：配置文件、视图文件（包括CSS、Less和模板文件）或安装类。请注意 `<sequence>` 不影响常规类（非设置类）的加载。
+*Setup* 类是组件中创建或更新 [数据库结构](https://glossary.magento.com/database-schema) 或数据的的类。
 
-If you know that your component's logic depends on something in another component, then you should add this component to `require` in `composer.json` and `<sequence>` in `module.xml`.
+如果您知道组件的逻辑依赖于另一个组件中的某些内容，那么应该将此组件添加到 `module.xml` 的 `<sequence>` 中和 `composer.json` 的`require`中 。
 
-You can check your module's load order from the `<magento_root>/app/etc/config.php` file after you've successfully set up Magento. This file is created dynamically at run time during set up.
+成功设置Magento后，在`<magento_root>/app/etc/config.php` 文件中检查模块的加载顺序。 这个文件在运行时动态设置创建。
 
  {:.bs-callout-info}
-If you change the component load order using `<sequence>`, you must regenerate the component list in `config.php`; otherwise, the load order does not take effect. Currently, the only way to do this is to enable the component using [`magento module:enable`]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), where `<module-list>` is the component or components to which you added `<sequence>`.
+如果使用 `<sequence>`改变了组件的加载顺序，必须在  `config.php`文件中重新生成组件列表; 否则，加载顺序不会生效。 目前，唯一的方法是通过[`magento module:enable`]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable)启用组件，其中 `<module-list>` 是 `<sequence>`添加了的一个或多个组件。
 
-### Examples
+### 例如
 
-Assume you have a component that needs a configuration file from another component:
+假设您有一个组件需要来自另一个组件的配置文件：
 
-__Component B__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __component A__. In this case, layout files from __component A__ should be loaded before __component B__, so you should specify that in __component B's__ `<sequence>` entry in [module](https://glossary.magento.com/module).xml. In other words, __component B__ is dependent on __component A__. That is to say:
+__组件 B__ 引入了 `gadgetlayout.xml`，它从 __组件 A__更新块`gadgetBlock` 。在这个案例中， __组件 A__的布局文件应该在在 __组件 B__之前加载， 因此应该  [module](https://glossary.magento.com/module).xml文件中的组件B的`<sequence>` 条目中指定。 换句话说， __组件 B__ 依赖于 __组件 A__. 也就是说:
 
 ```xml
 <?xml version="1.0"?>
@@ -36,23 +36,25 @@ __Component B__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock`
 </config>
 ```
 
-For each particular scenario, files of the same type are loaded from different components taking into account the sequence information provided in each component's `module.xml` file.
+对于每个特定的场景，从不同的组件加载相同类型的文件，同时考虑到每个组件的`module.xml`文件中提供的序列信息。
 
-In another scenario, let's say you want to load all of the [layout](https://glossary.magento.com/layout) files with the name `default.xml`. __Component A__ specifies __component B__ in `<sequence>`. The files load in the following order:
+在另一种场景下，要加载名为 `default.xml`的所有的 [布局](https://glossary.magento.com/layout) 文件。 __组件 A__ 在`<sequence>`指定 __组件 B__ . 文件按以下顺序加载：
 
-1. `component X/view/frontend/layout/default.xml`---Either we don't care about when component X loads or perhaps component B requires it to be loaded before it.
+1. `component X/view/frontend/layout/default.xml`---或者我们不关心组件X何时加载，或者组件B要求在加载之前加载它。
 1. `component B/view/frontend/layout/default.xml`
-1. `component A/view/frontend/layout/default.xml`---Loads after __component B__ because __component B__ is listed in __component A's__ `<sequence>` tag.
-1. `component Z/view/frontend/layout/default.xml`---Either we don't care about the sequence for component Z or perhaps component Z requires component A files to be loaded before it.
+1. `component A/view/frontend/layout/default.xml`---在 __组件 B__ 之后加载，因为 __组件 B__ 列入了__组件 A的__ `<sequence>` 标记中。
+1. `component Z/view/frontend/layout/default.xml`---或者我们不关心组件Z的顺序，或者组件Z可能需要先加载组件A文件。
 
-There are no limitations---you can specify any valid component in `<sequence>`.
+没有限制---你可以在 `<sequence>`中指定任何有效的组件。
 
-If you do specify a component in `<sequence>`, make sure that you have also added it to the `require` section in that component's `composer.json` file.
+如果在 `<sequence>`中指定了组件， 确保还将其添加到组件的  `composer.json` 文件的`require` 部分中。
 
 {:.bs-callout-info}
-Take care when using `<sequence>` in multiple components because it's possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.
+在 多个组件中`<sequence>`要谨慎些，因为可能会定义循环的依赖项。 如果这样做，Magento会在检测到循环依赖项时中止安装。
+
+
 
 {:.ref-header}
-Next
+下一步
 
-[Enable or disable your component]({{ page.baseurl }}/extension-dev-guide/build/enable-module.html)
+[禁用/启用组件]({{ page.baseurl }}/extension-dev-guide/build/enable-module.html)

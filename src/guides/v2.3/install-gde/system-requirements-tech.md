@@ -1,92 +1,90 @@
 ---
-group: installation-guide
-title: Magento 2.3 technology stack requirements
+group: 安装指南
+title: Magento 2.3技术堆栈要求
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-## Operating systems (Linux x86-64)
+## 操作系统（Linux x86-64）
 
-Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on:
+Linux发行版，如RedHat Enterprise Linux（RHEL）、CentOS、Ubuntu、Debian等。
+Magento不支持：
 
 *  Windows OS
 *  Mac OS
 
-## Memory requirement
+## 内存要求
 
-Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
+升级从Magento Marketplaces和其他来源获得的Magento应用程序和扩展可能需要高达2GB的RAM。如果您使用的系统的RAM小于2GB，建议您创建一个[swap file](https://support.magento.com/hc/en-us/articles/360032980432)；否则，您的升级可能会失败。
 
-## Composer (latest stable version)
+## Composer (最新稳定版本)
 
-[Composer][] is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
+对于希望为Magento 2代码库或任何希望开发Magento扩展的开发人员，都需要 [Composer][]。
 
-## Web servers
+## Web 服务器
 
-*  [Apache 2.4][]
+* [Apache 2.4][]
 
-   In addition, you must enable the Apache `mod_rewrite` and `mod_version` modules. The [`mod_rewrite`][] module enables the server to perform URL rewriting. The [`mod_version`][] module provides flexible version checking for different `httpd` versions. For more information, see [our Apache documentation][].
+   此外，必须启用Apache `mod_rewrite` 和 `mod_version` 模块。[`mod_rewrite`][]模块使服务器能够执行URL重写。[`mod'version][]模块为不同的“httpd”版本提供灵活的版本检查。有关更多信息，请参阅[我们的Apache文档][]。
 
 *  [nginx 1.x][]
 
-## Database
+## 数据库
 
-MySQL 5.6, 5.7
+MySQL 5.6，5.7版本
 
-Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
+Magento还兼容MySQL NDB Cluster 7.4.*、MariaDB 10.0、10.1、10.2、Percona 5.7和其他二进制兼容的MySQL技术。
 
 {:.bs-callout-info}
-Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
+Magento只使用与MariaDB兼容的MySQL特性。然而，MariaDB可能不兼容所有MySQL特性，因此在使用Magento模块中的特性之前，请务必研究兼容性问题。
 
 ## PHP
 
 {:.bs-callout-warning}
-PHP 7.1 has reached [End of Life](https://www.php.net/supported-versions.php). To maintain PCI compliance, Magento should not be run on unsupported software.
-Installing from GitHub will no longer work with Magento 2.3.4/PHP 7.1.
-The only way to install 2.3.4 with PHP 7.1.x is with Composer.
-Magento recommends using PHP 7.3
+PHP7.1已经提达到了它的[尽头](https://www.php.net/supported-versions.php)。为了保持PCI兼容性，不应在不受支持的软件上运行Magento。
+从GitHub安装将不再适用于Magento 2.3.4/PHP 7.1。
+使用PHP 7.1.x安装2.3.4的唯一方法是使用Composer。
+Magento建议使用PHP7.3
 
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-### Required PHP extensions
+### 所需的PHP扩展
 
 {:.bs-callout-info}
-The [PHP installation instructions][] include a step for installing these extensions.
+[PHP安装说明][]包含安装这些扩展的步骤。
 
 {:.bs-callout-warning}
-If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
+如果您通过从[github](https://github.com/magento/magento2)存储库克隆安装Magento，那么请确保您的实例上安装了[ext sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13)。
 
 <!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}
 
-Refer to [official PHP documentation][] for installation details.
+有关安装的详细信息，请参阅[官方PHP文档][]。
 
 ### PHP OPcache
 
-We strongly recommend you verify that [PHP OPcache][] is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our [PHP documentation][].
-
-If you must install it separately, see the [PHP OPcache documentation][].
+我们强烈建议您验证[PHP OPcache][]是否因性能原因而启用。OPcache在许多PHP发行版中都启用了。要验证它是否已安装，请参阅我们的[PHP文档][]。
+如果必须单独安装，请参阅[PHP OPcache文档][]。
 
 ### PHP settings
 
-We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
-
-For more information, see [Required PHP settings][].
+我们建议使用特定的PHP配置设置，例如 `memory_limit`，这样可以避免在使用Magento时出现常见问题。
+有关更多信息，请参阅[必需的PHP设置][]。
 
 ## SSL
 
-*  A valid [security certificate][] is required for HTTPS.
-*  Self-signed SSL certificates are not supported.
-*  Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.2 or later:
+*  HTTPS需要有效的[安全证书][]。
+*  不支持自签名SSL证书。
+*  传输层安全（TLS）要求 - PayPal 和 `repo.magento.com` 都要求TLS 1.2或更高版本：
 
-   *  [More information about PayPal][]
+   *  [关于PayPal的更多信息 ][]
 
-### Required system dependencies
+### 所需的系统依赖项 {#required-system-dependencies}
 
-Magento requires the following system tools for some of its operations:
+Magento的某些操作需要以下系统工具:
 
 *  [bash][]
 *  [gzip][]
@@ -98,48 +96,48 @@ Magento requires the following system tools for some of its operations:
 *  [sed][]
 *  [tar][]
 
-### Mail server
+### 邮件服务器
 
-Mail Transfer Agent (MTA) or an SMTP server
+邮件传输代理（MTA）或SMTP服务器
 
-## Technologies Magento can use
+## Magento可以使用的技术 {#technologies-magento-can-use}
 
-*  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
-*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.2
+*  [Redis][] 用于页面缓存和会话存储的redis版本3.2、4.0、5.0（兼容2.4+）。强烈建议使用5.0版.
+*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) 版本 4.x, 5.2 或 6.2
 *  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
-   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
+   {{site.data.var.ee}} 版本2.3.x支持以下Elasticsearch版本:
 
    *  Elasticsearch [6.x][]{:target="_blank"}
 
-      Magento 2.3 uses [Elasticsearch PHP client][]{:target="_blank"} version 6.1.
+      Magento 2.3使用[Elasticsearch PHP客户端][]{:target="_blank"} 版本 6.1.
 
       {:.bs-callout-warning}
-      Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x][].
+      Magento仍然支持Elasticsearch，但不推荐 [2.x and 5.x][].
 
-      If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+      如果必须使用Magento 2.3.1运行Elasticsearch 2.x或5.x，则必须更改Elasticsearch客户端版本。
 
-      Follow the instructions in [Change Elasticsearch Module][].
+      按照更改 Elasticsearch 搜索模块中的说明操作。
 
 *  RabbitMQ 3.8.x (compatible with 2.0 and later)
 
-   [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
+   [RabbitMQ][]{:target="_blank"} 可用于将消息发布到队列并定义异步接收消息的使用者。
 
-### {{site.data.var.ee}} only
+### 仅 {{site.data.var.ee}} 
 
-*  Three master databases
+*  三个主数据库
 
-   These [master databases][] provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
+   这些[主数据库][]为Magento应用程序的不同功能区域（如签出、订单和所有剩余的Magento应用程序表）提供了可伸缩性优势。
 
-### Optional but recommended
+### 推荐（可选）
 
-*  [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
+*  [php_xdebug 2.5.x][]{:target="_blank"} 或更高版本（仅限于开发环境；可能对性能产生不利影响）
 
 {:.bs-callout-info}
-There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
+`xdebug`存在一个已知问题，可能会影响Magento安装，或在安装后访问店面或Magento管理员。有关详细信息，请参阅[xdebug的已知问题][]。
 
 *  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
-*  PHPUnit (as a command-line tool) 6.2.0
+*  PHPUnit (作为命令行工具) 6.2.0
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php

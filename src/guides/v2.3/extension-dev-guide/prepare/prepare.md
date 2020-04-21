@@ -1,15 +1,16 @@
 ---
 group: php-developer-guide
 subgroup: 02_Prepare
-title: Prepare (development quick start)
+title: 准备 (development quick start)
 menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
 ---
 
-Before you start building Magento modules, we suggest you use the following checklist:
+在开始构建Magento模块之前，我们建议您使用以下清单：
 
-*  [Install Magento and any required dependencies]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-*  [Set Magento for developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode)
-*  Decide which type of component you're creating and [how to set it up]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in `composer.json`.
-*  [Understand the component file structure]({{ page.baseurl }}/extension-dev-guide/prepare/prepare_file-str.html)
+*  [安装Magento和任何必需的依赖项]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+*  [设置Magento为开发人员模式]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode)
+*  在`composer.json`中确定要创建的组件类型和[如何设置]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
+*  [了解组件文件结构]({{ page.baseurl }}/extension-dev-guide/prepare/prepare_file-str.html)
+

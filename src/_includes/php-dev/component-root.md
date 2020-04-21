@@ -1,14 +1,14 @@
-### Root directory location
+### 根目录位置
 
-A component's root directory is the top-level directory for that component under which its folders and files are located. Depending on how your Magento development environment was installed, your component's root directory can be located in two places:
+组件的根目录是该组件的顶级目录，其文件夹和文件位于该目录下。根据Magento开发环境的安装方式，组件的根目录可以位于两个位置：
 
-*  `<Magento install directory>/app`: This is the *recommended* location for component development. You can easily set up this type of environment by [Cloning the Magento 2 GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
+*  `<Magento install directory>/app`: 这是组件开发的*推荐*位置。您可以通过[克隆Magento 2 GitHub仓库]({{ page.baseurl }}/install-gde/prereq/dev_install.html)轻松地设置此类环境。
 
-   *  For modules, use `app/code`.
-   *  For storefront themes, use `app/design/frontend`.
-   *  For Admin themes, use `app/design/adminhtml`.
-   *  For language packages, use `app/i18n`.
+   *  对于模块开发，使用 `app/code`.
+   *  对于店铺主题，使用 `app/design/frontend`.
+   *  对于管理后台，使用 `app/design/adminhtml`.
+   *  对于语言包，使用 `app/i18n`.
 
-*  `<Magento install directory>/vendor`: This location is found in the alternative setups where the {% if page.guide_version == "2.0" %} [`composer create-project`]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [`composer create-project`]({{page.baseurl}}/install-gde/composer.html). {% endif %} command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a [compressed Magento 2 archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html) was extracted in order to install Magento.
+*  `<Magento install directory>/vendor`: 对于使用 {% if page.guide_version == "2.0" %} [`composer create-project`]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [`composer create-project`]({{page.baseurl}}/install-gde/composer.html). {% endif %}命令安装的Magento 2 元包(下载 CE 或者 EE 代码)的安装，您将找到此位置。  或者是提取了 [Magento2程序压缩文档]({{ page.baseurl }}/install-gde/prereq/zip_install.html) 安装的Magento。
 
-   Any third-party components (and the Magento application itself) are downloaded and stored under the `<Magento install directory>/vendor` directory. If you are using [Git](https://git-scm.com/docs) to manage your project, this directory is typically added to the `<Magento install directory>/.gitignore` file. Therefore, we recommend you do your customization work in `<Magento install directory>/app/code`, not `<Magento install directory>/vendor`.
+   任何第三方组件（以及Magento应用程序本身）都被下载并存储在 `<Magento install directory>/vendor` 目录。如果你使用 [Git](https://git-scm.com/docs) 管理你的项目，此目录通常添加到 `<Magento install directory>/.gitignore` 文件中。 因此，我们建议您在 `<Magento install directory>/app/code`，不推荐在 `<Magento install directory>/vendor`.

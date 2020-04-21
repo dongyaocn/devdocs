@@ -1,38 +1,38 @@
 ---
 group: php-developer-guide
-title: Create custom cache engines
+title: 创建自定义缓存引擎
 redirect_from:
   -  /guides/v2.3/config-guide/database/database.html
   -  /guides/v2.3/config-guide/cache/caching-database.html
 ---
 
-## Overview of database caching {#mage-cache-db-over}
+## 数据库缓存概述 {#mage-cache-db-over}
 
-This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the `cache` and `cache_tag` Magento 2 database tables. Nothing is stored `var/cache` or `var/page_cache`.
+本主题讨论如何使用Magento 2数据库进行缓存。完成这些任务后，缓存对象将存储在 `cache` 和 `cache_tag` Magento 2数据库表中。并非存储在 `var/cache` 或者 `var/page_cache`.
 
-This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
+本主题讨论如何设置数据库缓存以及如何验证数据库缓存是否正常工作。我们讨论以下选项：
 
-*  Using the `default` cache frontend, in which case you modify `di.xml` only.
-*  Using a custom [cache](https://glossary.magento.com/cache) frontend, in which case you modify `env.php` only.
+*  使用 `default` 缓存前端,，在这种情况下只能修改`di.xml` 。
+*  使用自定义 [缓存](https://glossary.magento.com/cache) 前端，在这种情况下只能修改`env.php` 。	 
 
 {:.bs-callout-warning}
-Database caching---like file-based caching--- works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
-Varnish is designed to accelerate the HTTP protocol.
+数据库缓存---类似于基于文件的缓存--- 在开发环境中运行良好，但我们强烈建议您在生产中使用 [Varnish][]
+Varnish被设计用来加速HTTP协议。
 
-## Prerequisites {#mage-cache-db-prereq}
+## 先决条件 {#mage-cache-db-prereq}
 
-Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` [frontend](https://glossary.magento.com/frontend) cache, you don't have to do that.
+继续之前，如果正在使用自己的前端缓存，请确保 [将缓存前端与缓存类型关联]。如果使用 `default` [前端](https://glossary.magento.com/frontend) 缓存，则不必这样做。
 
-We provide [sample configurations] at the end of this topic.
+我们在本主题的最后提供[示例配置]。
 
-## Database caching using the `default` cache frontend {#mage-cache-db-di}
+## 数据库缓存使用 `default` 缓存前端 {#mage-cache-db-di}
 
-To enable database caching using the `default` frontend, you must modify `<magento_root>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
+要使用 `default` 前端启用数据库缓存，必须修改 `<magento_root>/app/etc/di.xml`，这是magento应用程序的全局部署注入配置。
 
-To modify `di.xml`:
+修改 `di.xml`:
 
-1. Log in to the Magento server as, or switch to, the [Magento file system owner].
-1. Enter the following commands to make a copy of `di.xml`:
+1. 以[Magento文件系统所有者]的身份登录到Magento服务器，或切换到该服务器。
+1. 输入一下命令复制 `di.xml`:
 
    ```bash
    cd <magento_root>/app/etc
@@ -42,7 +42,7 @@ To modify `di.xml`:
    cp di.xml di.xml.bak
    ```
 
-1. Open `di.xml` in a text editor and locate the following block:
+1. 在文档编辑器中打开 `di.xml` 并定位到一下代码块:
 
    ```xml
    <type name="Magento\Framework\App\Cache\Frontend\Pool">
@@ -65,11 +65,11 @@ To modify `di.xml`:
    </type>
    ```
 
-   The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.
+   `<type name="Magento\Framework\App\Cache\Frontend\Pool">` 节点为所有前端缓存实例的内存池配置选项。
 
-   The `<type name="Magento\Framework\App\Cache\Type\FrontendPool">` node configures cache frontend options specific to each cache type.
+   `<type name="Magento\Framework\App\Cache\Type\FrontendPool">` 节点配置特定于每种缓存类型的缓存前端选项。
 
-1. Replace the entire block with the following:
+1. 用以下内容替换整个块:
 
    ```xml
    <type name="Magento\Framework\App\Cache\Frontend\Pool">

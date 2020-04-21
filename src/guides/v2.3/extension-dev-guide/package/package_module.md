@@ -1,45 +1,45 @@
 ---
 group: php-developer-guide
 subgroup: 05_Package
-title: Package a component
-menu_title: Package a component
+title: 打包组件
+menu_title: 打包组件
 menu_order: 2
 ---
 
-## Overview of packaging {#package-over}
+## 打包概述 {#package-over}
 
-The Magento application uses [Composer](https://glossary.magento.com/composer) packages to distribute, install, and upgrade components in an application instance.
+Magento 程序使用 [Composer](https://glossary.magento.com/composer) 包在应用程序实例中分发, 安装, 升级组件。
 
-To package a component, you must:
+要打包组件，必须：
 
-*  Create a Magento Composer file (`composer.json`).
-*  Register the component using `registration.php`
-*  Package and publish your component.
+*  创建 Magento Composer 文件 (`composer.json`).
+*  使用 `registration.php` 文件注册组件。
+*  打包并发布组件。
 
-## Create a Magento Composer file {#composer}
+## 创建 Magento Composer 文件 {#composer}
 
-The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the [module](https://glossary.magento.com/module).
+Magento`composer.json`文件定义了组件的名称、需求、版本和其他基本信息。 此文件必须放在 [模块](https://glossary.magento.com/module)的根目录中。
 
-The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
+`composer.json` 使用 [Composer的一般结构](https://getcomposer.org/doc/04-schema.md)， 有以下限制：
 
 Element | Description
 --- | ---
-`name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words. Themes must use the format `<vendor-name>/theme-<area>-<theme-name>`.
-`type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
-`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
+`name` | 完全限定的组件名称，格式为 `<vendor-name>/<component-name>`. 所有字母必须小写。使用破折号分隔词组`<component-name>` . 主题必须使用如下格式 `<vendor-name>/theme-<area>-<theme-name>`. 
+`type` | 对于模块, 这个值必须设置为 `magento2-module`. 其他可能的类型是 `metapackage`, `magento2-theme`, 和 `magento2-language`。 
+`autoload` | 指定要加载的必要信息, 像 [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html)，更多详细信息， 参考 Composer [自动加载](https://getcomposer.org/doc/01-basic-usage.md#autoloading) 。 
 
 {% include php-dev/composer-types.md %}
 
-### Using metapackages {#package-metapackage}
+### 使用 元包 {#package-metapackage}
 
-Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
+元包 允许你把多个包组成的 [扩展](https://glossary.magento.com/extension)分组成一个聚合单元。它的工作原理与标准的[composer.json 文档](https://getcomposer.org/doc/04-schema.md#type)描述相同。如果您的扩展使用了多个包，则必须使用 [元包](https://glossary.magento.com/metapackage) 作为 *根包(root package)*。否则不应使用元包。提交给Magento Marketplace的元包应该是一个.zip文件，其中只包含元包 `composer.json` 文件.
 
  {:.bs-callout-info}
-We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.
+我们建议元包引用特定的组件版本。不要使用通配符来表示版本范围。
 
-#### Metapackage example
+#### 元包 示例
 
-The following example is a `composer.json` for a metapackage:
+下面是一个元包示例 `composer.json` :
 
 ```json
 
@@ -84,9 +84,9 @@ The following example is a `composer.json` for a metapackage:
 
 ```
 
-### Sample composer.json file
+###  composer.json 文件样本 {#sample-composerjson-file}
 
-The following example is a `composer.json` file for a module:
+以下示例是模块的 `composer.json`文件
 
 ```json
 {
@@ -112,43 +112,42 @@ The following example is a `composer.json` file for a module:
 
 ```
 
-## Package and publish your extension {#packaging}
+## 打包和发布扩展 {#packaging}
 
-Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
+通过对带有扩展名的目录（不包括不必要的目录）执行zip操作，创建扩展名的包。例如：
 
     zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
 
-Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.
-
-Magento can retrieve your extension package from any valid GitHub [URL](https://glossary.magento.com/url).
+对带有破折号的包文件名使用字母数字字符来分隔单词。不要使用空格。
+Magento可以从任何有效的GitHub [URL](https://glossary.magento.com/url) 检索扩展包
 
 <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
  {:.bs-callout-info}
-Third party repositories are supported.
+支持第三方存储库。
 
-### Hosting on GitHub and Packagist {#hosting}
+### 在GitHub和Packagist上托管{#hosting}
 
-Prerequisite: Git must be set up on your machine.
+前提条件: 必须在您的计算机上设置Git.
 
-1. Navigate to your component directory, with the `composer.json` file in the root, and make it a new Git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details.
-1. When you have committed and pushed your component to your GitHub repository, you can either:
+1. 导航到组件目录，根目录中有`composer.json`文件，并使其成为新的Git存储库. 详细信息查阅 [GitHub 文档](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) 。
+1. 当您提交组件并将其推送到GitHub仓库时，您可以：
 
-   *  Use [Composer to refer to it directly](https://getcomposer.org/doc/05-repositories.md#vcs), or
-   *  Use the following steps to refer to the package through Packagist.
+   *  使用 [Composer 直接引用](https://getcomposer.org/doc/05-repositories.md#vcs), 或者
+   *  使用以下步骤通过Packagist引用包。
 
-      1. Register an account at [packagist.org](https://packagist.org/).
-      1. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, because this is required solely using GitHub.
+      1. 在 [packagist.org](https://packagist.org/)注册一个账户。
+      1. 点击Submit Package 按钮并粘贴GitHub仓库链接。Packagist自动从组件的 `composer.json`文件收集信息并将其链接到GitHub仓库，允许您将包引用为 `vendor/module` ，而无需任何其他仓库信息，因为这仅需要使用GitHub。
 
-### Hosting on a private repository {#private_repos}
+### 托管在私有仓库上 {#private_repos}
 
  {:.bs-callout-info}
-If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
+如果使用安装向导，则必须使用Magento Marketplace仓库。私有存储库可用于开发或私有代码，但安装必须使用命令行界面完成（您可以安装仅使用命令行安装指定私有仓库的包）。
 
-1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
-1. Create the package in a way similar to the described above.
-1. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
-1. To use the private packaging repository in a project, add the following to your `composer.json`file:
+1. 使用[Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) 或者 [Private Packagist](https://packagist.com/)等系统设置自己的Composer包仓库。
+1. 以类似于上述的方式创建包。
+1. 在仓库提交/注册包。例如，它可以作为代码存储库的引用托管，也可以作为zip存档提交。
+1. 要在项目中使用私有打包仓库，请将以下内容添加到`composer.json`文件中：
 
    ```json
    {
@@ -161,7 +160,8 @@ If you use the Setup Wizard, you must use the Magento Marketplace repository. A 
    }
    ```
 
-All packages on the private repository can now be referenced within the `require` field.
+现在可以在 `require` 字段中引用私有仓库中的所有包。.
 
-Refer to the [official documentation](https://packagist.com/features/private-vcs-packages) for more details on how to configure your project to use Private Packagist.
+参考 [官方文档](https://packagist.com/features/private-vcs-packages) 有关如何将项目配置为使用私有Packagist的详细信息。
 <!-- ##Submitting your module to Marketplace -->
+

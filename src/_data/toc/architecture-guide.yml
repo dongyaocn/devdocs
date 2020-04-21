@@ -1,60 +1,60 @@
-label: Architecture Guide
+label: 体系结构指南
 pages:
-    - label: Introduction
+    - label: 介绍
       url: /architecture/bk-architecture.html
 
-    - label: Architectural basics
+    - label: 基础结构
       url: /architecture/archi_perspectives/ABasics_intro.html
       children:
 
-        - label: Architectural diagrams
+        - label: 体系结构图
           url: /architecture/archi_perspectives/arch_diagrams.html
 
-        - label: Frontend customization
+        - label: 前端定制
           url: /architecture/frontend_custom_strategies.html
 
-        - label: Security overview
+        - label: 安全概述
           url: /architecture/security_intro.html
 
-    - label: Architectural layers
+    - label: 体系结构层次
       url: /architecture/archi_perspectives/ALayers_intro.html
       children:
 
-        - label: Domain layer
+        - label: 域层
           url: /architecture/archi_perspectives/domain_layer.html
 
-        - label: Persistence layer
+        - label: 持久层
           url: /architecture/archi_perspectives/persist_layer.html
         
-        - label: Presentation layer
+        - label: 展示层
           url: /architecture/archi_perspectives/present_layer.html
 
-        - label: Service layer
+        - label: 服务层
           url: /architecture/archi_perspectives/service_layer.html
 
-    - label: Coding Standards
+    - label: 编码标准
       url: /coding-standards/bk-coding-standards.html
 
-    - label: Magento Framework
+    - label: Magento框架
       url: /architecture/archi_perspectives/framework.html
 
-    - label: Modules and Extensibility
+    - label: 模块和可扩展性
       url: /architecture/extensibility.html
       children:
 
-        - label: Module overview
+        - label: 模块概述
           url: /architecture/archi_perspectives/components/modules/mod_intro.html
 
-        - label: Modules and areas
+        - label: 模块和区域
           url: /architecture/archi_perspectives/components/modules/mod_and_areas.html
 
-        - label: Module relationships
+        - label: 模块关系
           url: /architecture/archi_perspectives/components/modules/mod_relationships.html
 
-        - label: Module dependencies
+        - label: 模块依赖项
           url: /architecture/archi_perspectives/components/modules/mod_depend.html
 
-    - label: Technical vision
+    - label: 技术视野
       url: /architecture/archi_perspectives/tech-vision.html
       children:
 

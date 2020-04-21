@@ -1,11 +1,11 @@
-project-webint-basiclabel: Community Resources
+project-webint-basiclabel: 社区资源
 pages:
 
-  - label: Community resources
+  - label: 社区资源
     url: /community/resources/resources.html
     versionless: true
 
-  - label: Community contributed best practices
+  - label: 社区贡献的最佳做法
     url: /community/resources/best-practices.html
     versionless: true  
     #children:

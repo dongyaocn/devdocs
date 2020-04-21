@@ -1,21 +1,21 @@
 ---
 group: php-developer-guide
-title: Extension Repository Structure
+title: 扩展仓库结构
 ---
 
-## Extension Repository Structure
+## 扩展仓库结构
 
-For Magento 2.3 module, theme, and language pack extension repositories, we recommend five best practices:
+对于Magento 2.3模块、主题和语言包扩展仓库，我们推荐五种最佳实践：
 
-*  Flatter hierarchy
-*  One *extension type* (module, theme, or language pack) per repository
-*  Multiple components per repository
-*  One component per repository
-*  One functional test suite per module component
+*  等级制度扁平化
+*  每个仓库一个*扩展类型*（模块、主题或语言包）
+*  每个仓库有多个组件
+*  每个仓库有一个组件
+*  每个模块组件一个功能测试套件
 
-### Flatter hierarchy
+### 等级制度扁平化
 
-Your repository structure should no longer include `app/code/<Vendor>/` directories.
+仓库结构不在包含 `app/code/<Vendor>/` 目录。
 
 *Before:*
 
@@ -32,21 +32,21 @@ Your repository structure should no longer include `app/code/<Vendor>/` director
 └── <Module1>
 ```
 
-### One extension type per repository
+### 每个仓库一个扩展类型
 
-You cannot mix extension types (modules, themes, and language packs) in the same extension repository. Each component type must have its own repository. For example, *you cannot do this*:
+不能在同一扩展仓库中混合扩展类型（模块、主题和语言包）。每个组件类型都必须有自己的仓库。例如，*你不能这样做*：
 
 ```tree
-// This is not supported
+// 不支持此操作
 <extension_repo_root>
 ├── <Module1>
 ├── <theme1>
 └── <language1>
 ```
 
-### Multiple components per repository
+### 每个仓库有多个组件
 
-If your extension is complex and requires several components, you can keep those components in the same repository to make the extension easy to package and maintain:
+如果扩展很复杂并且需要几个组件，则可以将这些组件保存在同一个仓库中，以使扩展易于打包和维护：
 
 ```tree
 <extension_repo_root>
@@ -56,7 +56,7 @@ If your extension is complex and requires several components, you can keep those
 └── <Module2SampleData>
 ```
 
-You can do the same for theme and language pack extensions:
+您可以对主题和语言包扩展执行相同的操作：
 
 ```tree
 <extension_repo_root>/
@@ -68,9 +68,9 @@ You can do the same for theme and language pack extensions:
 ├── <language1>
 └── <language2>
 ```
-### One component per repository
+### 每个仓库有一个组件
 
-If your extension requires only one component, your `<component_root>` directory and your `<repo_root>` directory will be the same to reduce unnecessary hierarchy in the directory structure:
+如果您的扩展只需要一个组件，那么您的`<component_root>`目录和`<repo_root>`目录将相同，以减少目录结构中不必要的层次结构：
 
 ```tree
 <MyModule_repo_root>
@@ -90,11 +90,10 @@ If your extension requires only one component, your `<component_root>` directory
 └── ...
 ```
 
-### Test Suites
+### 测试套件
 
-Function tests can be added to a `Test` directory within each module of your extension.
-
-Note: Currently, only Unit and MFTF tests can be run from within a `<Module>` directory.
+函数测试可以添加到扩展的每个模块中的`Test`目录中。
+注意：目前，只有单元和MFTF测试可以从`<Module>`目录中运行。
 
 ```tree
 <extension_repo_root>

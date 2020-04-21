@@ -1,25 +1,25 @@
 ---
 group: php-developer-guide
-title: Name your component
+title: 命名组件
 ---
 
-You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
+在`composer.json`和`module.xml`文件中为组件命名。这些文件还包含其他必需的配置参数，例如模块的架构版本。
 
-## Prerequisites {#prereq}
+## 先决条件 {#prereq}
 
-Before you continue, make sure you have completed all of the following tasks:
+继续之前，请确保已完成以下所有任务：
 
-*  Create a [file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
-*  Create the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
-*  [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
+*  创建  [文件结构]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html)。
+*  创建需要的 [配置文件]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) 。
+*  [注册]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) 组件。
 
-## Add the component's `module.xml` file {#add-component-xml}
+## 添加组件的 `module.xml` 文件 {#add-component-xml}
 
-Declare the component itself by adding a `module.xml` file in the `/etc` folder of your component.
+通过在组件目录下的`/etc`目录中添加一个 `module.xml`来声明组件本身。
 
-A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
+组件在`module.xml`文件中声明自己 (即定义名称和存在) , 位于Magento安装目录 `<ComponentName>/etc/`中。
 
-The smallest working `module.xml` file would look something like this:
+工作最简单的`module.xml` 文件如下:
 
 ```xml
 <?xml version="1.0"?>
@@ -28,23 +28,23 @@ The smallest working `module.xml` file would look something like this:
 </config>
 ```
 
-The `name` parameter defines the name of your component. It is required for all components. If you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html) to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's [database schema](https://glossary.magento.com/database-schema) version. Omit the `setup_version` parameter if you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html).
+`name` 参数定义了组件的名称。所有组件都需要。 如果不使用 [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html) 来辅助管理处理组件的安装和升级，则还必须添加  `setup_version` 参数在 `module` 这一行中。 将`setup_version` 值设置为模块 [database schema](https://glossary.magento.com/database-schema) 的版本。 如果不使用[Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html)，请忽略`setup_version`参数。
 
  {:.bs-callout-info}
-Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+避免使用 "Ui" 在你的模块名称中，因为 `%Vendor%_Ui` 指定的路径中包含符号, 可能会导致问题.
 
-## Add the component's `composer.json` file {#add-composer-json}
-`composer.json` provides a component name and also specifies component dependencies.
+## 添加组件的 `composer.json` 文件 {#add-composer-json}
+`composer.json`指定组件名称并提供组件依赖项。
 
-In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies:
+此外,  [组件管理器]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) 在组件根目录中查找`composer.json` ，并可以对组件及其依赖项执行操作：
 
-*  If a component has `composer.json` *and* the component was installed using [Composer](https://glossary.magento.com/composer) (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
-*  If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
-*  We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
+*  如果组件具有 `composer.json` *并且* 组件使用 [Composer](https://glossary.magento.com/composer) (包含自 packagist,  Magento Marketplace, 或者其他源)安装组件，Component 管理器可以更新，删除，启用，禁用组件。
+*  组件具有 `composer.json` 但 *不是* 通过 Composer (例如, 开发人员编写的自定义代码)安装，, Component 管理器仍然可以启用或者禁用组件。
+*  我们强烈推荐在你的组件根目录中包含 `composer.json`不管你是否打算将它分发给其他的Magento商家。
 
-Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html) to determine versioning requirements.
+参考 [模块版本依赖项]({{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html) 以确定版本控制需求。
 
-### Example `composer.json` file
+### 示例 `composer.json` 文件
 
 ```json
 {
@@ -76,20 +76,20 @@ Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/ve
 }
 ```
 
-In this example:
+在这个示例中：
 
-*  `name` is the name of your component.
-*  `description` is a concise explanation of your component's purpose.
-*  `require` lists any components your component depends on.
-*  `suggest` lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. `Suggest` does not affect component load order.
-*  `type` determines what the [Magento component](https://glossary.magento.com/magento-component) type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
-*  `version` lists the version of the component.
-*  `license` lists applicable licenses that apply to your component.
-*  `autoload` instructs Composer to load the specified files.
+*  `name` 是组件的名称
+*  `description` 是对组件用途的简明说明。
+*  `require` 列出组件所依赖的任何组件。
+*  `suggest` 列出软依赖项。组件可以在没有它们的情况下运行，但是如果组件处于活动状态，则此组件可能会影响它们的功能。`Suggest`不影响组件加载顺序。
+*  `type` 确定 [Magento 组件](https://glossary.magento.com/magento-component) 类型。 在这些类型 *magento2-theme*, *magento2-language*, 或者 *magento2-module*中选择一个。
+*  `version` 列出组件的版本。
+*  `license` 列出适用于组件的适用许可证。
+*  `autoload` 指示 Composer 加载指定的文件。
 
  {:.bs-callout-info}
-Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path) repository.
+Magento 当前不支持 [`path`](https://getcomposer.org/doc/05-repositories.md#path) 仓库.
 
-#### Next
+#### 下一步
 
-[Component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html)
+[组件加载顺序]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html)

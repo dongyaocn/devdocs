@@ -1,10 +1,10 @@
-label: Advanced Reporting
+label: 高级报告
 pages:
-  - label: Overview
+  - label: 概述
     url: /advanced-reporting/overview.html
-  - label: Modules
+  - label: 模块
     url: /advanced-reporting/modules.html
-  - label: Data collection
+  - label: 数据收集
     url: /advanced-reporting/data-collection.html
-  - label: Report XML
+  - label: 报表XML
     url: /advanced-reporting/report-xml.html

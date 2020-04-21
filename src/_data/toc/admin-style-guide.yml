@@ -1,46 +1,46 @@
-label: Admin Style Guide
+label: Admin 风格指南
 pages:
-    - label: Admin Style Guide
+    - label: Admin 风格指南
       children:
 
-            - label: Introduction
+            - label: 介绍
               url: /design-styleguide/bk-styleguide.html
 
-    - label: Design
+    - label: 设计
       children:
 
-            - label: Color
+            - label: 颜色
               url: /design-styleguide/color/color.html
 
-            - label: Iconography
+            - label: 图像学
               url: /design-styleguide/iconography/iconography.html
 
-            - label: Page Grids
+            - label: 页面栅格
               url: /design-styleguide/pagegrid/pagegrid.html
 
-            - label: Typography
+            - label: 印刷排版
               url: /design-styleguide/typography/typography.html
 
-    - label: Writing and Content
+    - label: 写作与内容
       children:
 
-            - label: Voice and Tone
+            - label: 声音风格
               url: /design-styleguide/content-voice-tone/content-voice-tone.html
 
-            - label: Errors and Messages Writing
+            - label: 错误和消息写入
               url: /design-styleguide/errors-and-messages/errors-and-messages.html
 
-            - label: Buttons and Links Usage
+            - label: 按钮和链接的使用
               url: /design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html
 
-            - label: Capitalization
+            - label: 大写
               url: /design-styleguide/capitalization/capitalization.html
 
-            - label: Headings and Organization
+            - label: 标题和组织
               url: /design-styleguide/headings-and-organization/headings-and-organization.html
 
-            - label: Content Formats
+            - label: 内容格式
               url: /design-styleguide/content-formats/content-formats.html
 
-            - label: Number Formats
+            - label: 字格式
               url: /design-styleguide/number-formats/number-formats.html

@@ -1,26 +1,26 @@
 ---
 group: php-developer-guide
 subgroup: 01_Introduction
-title: Developer roadmap
-menu_title: Developer roadmap
+title: 开发人员路线图
+menu_title: 开发人员路线图
 menu_order: 2
 ---
 
-This topic introduces the high-level workflow for a developer who wants to create or customize the Magento application. Developers can also package and distribute their customizations to merchants.
+本主题介绍要创建或自定义Magento应用程序的开发人员的高级工作流。开发人员还可以打包和分发他们的定制给商家。
+要满足创建或自定义Magento应用程序所需的最少元素，请执行以下操作：
 
-To satisfy the minimum required elements for creating or customizing your Magento application:
-
-*  [Declare component dependencies]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in `composer.json`.
+*  [声明组件依赖关系]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in `composer.json`.
 
    {:.bs-callout-tip}
-   While you can manage dependencies on your own, it is a recommended and strongly encouraged best practice to use the `composer.json` file.
+   虽然您可以自己管理依赖项，但建议并强烈建议使用`composer.json`文件。
 
-*  [Register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the component using the `registration.php` file.
-*  Use these component-specific XML definition files:
-   *  Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
-   *  Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
-   *  Language packages: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
+*  使用 `registration.php` 文件注册组件.
+*  使用下面的组件指定的XML定义文件:
+   *  模块: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
+   *  主题: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
+   *  语言包: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
 
-*  Distribute your component:
-   *  [Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in `.zip` format.
-   *  If you upload the component to Magento Marketplace, it should be less than 30MB in size.
+*  分发组件:
+   *  使用 `.zip`格式[打包组件]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) 。
+   *  如果您要将组件发布到Magento Marketplace，则组件打包文件应小于30MB。
+

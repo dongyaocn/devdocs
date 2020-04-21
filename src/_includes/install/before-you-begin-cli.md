@@ -1,5 +1,6 @@
-Before you begin, make sure that:
+开始之前，请确保：
 
-1. Your system meets the requirements discussed in [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-1. You completed all prerequisite tasks discussed in [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
-1. After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. 您的系统符合[Magento系统要求]({{ page.baseurl }}/install-gde/system-requirements.html)中讨论的要求
+1. 您已完成[先决条件]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)中讨论的所有先决条件任务.
+1. 登录到Magento服务器后，请切换到具有写入Magento文件系统权限的用户。在[切换到Magento文件系统所有者]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)中讨论的一种方法.
+

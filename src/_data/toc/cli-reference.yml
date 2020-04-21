@@ -1,11 +1,11 @@
-label: Command-line tools reference
+label: 命令行工具参考
 pages:
 
-  - label: Open Source
+  - label: 开源版
     url: /reference/cli/magento.html
       
-  - label: Commerce
+  - label: 商业版
     url: /reference/cli/magento-commerce.html
   
-  - label: Cloud
+  - label: 云版
     url: /reference/cli/magento-cloud.html

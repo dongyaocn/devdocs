@@ -1,18 +1,19 @@
 ---
 group: php-developer-guide
 subgroup: 02_Prepare
-title: About component file structure
+title: 关于组件文件结构
 ---
 
-One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a *different file structure*, although all components require certain files.
+要开始组件开发，首先要做的事情之一是理解和设置文件系统。每种类型的组件都有*不同的文件结构*，尽管所有组件都需要特定的文件。
 
-In addition, you can choose the component root directory to start development. The following sections have more information.
+此外，您可以选择组件根目录来开始开发。以下各节提供了更多信息。
 
 {% include php-dev/component-root-2.3.md %}
 
 {% include php-dev/component-required-files.md %}
 
 {:.ref-header}
-Related topic
+相关主题
 
-[Roadmap for developing and packaging components]({{ page.baseurl }}/extension-dev-guide/prepare/dev-summary.html)
+[开发和打包组件的路线图]({{ page.baseurl }}/extension-dev-guide/prepare/dev-summary.html)
+

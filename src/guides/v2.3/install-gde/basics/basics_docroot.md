@@ -1,8 +1,8 @@
 ---
 group: installation-guide
 subgroup: Getting Started
-title: What is a docroot?
-menu_title: What is a docroot?
+title: 什么是docroot?
+menu_title: 什么是docroot?
 menu_node:
 menu_order: 200
 level3_menu_node: level3child
@@ -13,31 +13,31 @@ functional_areas:
   - Setup
 ---
 
-The web server document root (often referred to as the _docroot_) is where you put all the files your website needs to function. You can use your web server's default docroot or [modify it to enhance security]({{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html). For example, you should restrict browser access to Magento-specific files after installation.
+web服务器文档根目录(通常称为_docroot_)是放置网站运行所需的所有文件的地方。您可以使用您的web服务器的默认docroot或[修改它以增强安全性]({{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html)。例如，您应该在安装之后限制浏览器对特定于magento的文件的访问。
 
-The path to your web server's default docroot varies depending on the following:
+到您的web服务器的默认docroot的路径取决于以下内容:
 
--  Operating system
--  Web server software
--  Hosting provider (if you use one)
+-  操作系统
+-  Web服务器软件
+-  虚拟主机提供商 (如果你使用其中一个的话)
 
 {:.bs-callout-warning}
-As part of the Magento 2 installation process, you specify a subdirectory (usually `magento2`) under the docroot. The Magento-specific files are installed in this subdirectory, so knowing where to locate the default docroot is critical.
+作为Magento 2安装过程的一部分，需要在docroot下指定一个子目录(通常是` magento2 `)。特定于magento的文件安装在这个子目录中，因此知道在哪里找到默认的docroot是至关重要的。
 
-## Contact your hosting provider
+## 联系您的主机提供商
 
-If you use one, contact your hosting provider to locate the web server docroot. For example, [cPanel](http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder){:target="_blank"} typically uses `public_html` as its docroot, but you should contact your provider to confirm.
+如果您使用一个，请联系您的主机提供商来定位web服务器docroot。例如，[cPanel](http://support.hostgator.com/articles/cpanel/what-a-document-root -folder){:target="_blank"}通常使用`public_html `作为其docroot，但是您应该联系您的提供商进行确认。
 
-## Find the docroot yourself
+## 自己去找docroot
 
-This section assumes you've already set up a simple web server using [Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="_blank"}.
+本节假设您已经使用以下命令设置了一个简单的web服务器[Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="_blank"}.
 
 {:.bs-callout-info}
-You can use _virtual hosts_ and _server blocks_ to run more than one website on a single machine (e.g., `company1.example.com` and `company2.example.com`) or override the web server's default docroot without changing it.
+您可以使用_virtual hosts_和_server blocks_在一台机器上运行多个网站 (e.g., `company1.example.com` and `company2.example.com`) ，或者在不更改的情况下覆盖web服务器的默认docroot。
 
-To find the docroot on your server:
+要找到你的服务器上的docroot:
 
-1. Open one of the following files in a text editor:
+1. 在文本编辑器中打开下列文件之一:
 
    -  **Ubuntu**
 
@@ -53,9 +53,9 @@ To find the docroot on your server:
       /etc/nginx/nginx.conf (nginx)
       ```
 
-1. Search the file for `DocumentRoot` or `root`.
+1. 在文件中搜索 `DocumentRoot` or `root`.
 
-   Typically, the default Apache docroot on Ubuntu _and_ CentOS is `/var/www/html` whereas the default nginx docroot on CentOS is `/usr/share/nginx/html`. For example:
+   通常，Ubuntu _and_ CentOS上的默认Apache docroot是`/var/www/html` 而CentOS上的默认nginx docroot是`/usr/share/nginx/html`。例如:
 
    -  **Apache + Ubuntu/CentOS**
 
@@ -68,3 +68,4 @@ To find the docroot on your server:
        ```conf
        root      /usr/share/nginx/html
        ```
+

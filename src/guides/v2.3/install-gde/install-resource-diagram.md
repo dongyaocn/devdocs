@@ -1,8 +1,8 @@
 ---
 group: installation-guide
 subgroup: 01_resource
-title: Installation flow diagram
-menu_title: Installation flow diagram
+title: 安装流程图
+menu_title: 安装流程图
 menu_node:
 menu_order: 5
 functional_areas:
@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-The following diagram provides a high-level overview of installing the Magento software:
+下图提供了安装Magento软件的高级概述：
 
 {% include install/flow-diagram.md %}
 

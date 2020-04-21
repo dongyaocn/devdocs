@@ -1,26 +1,26 @@
-label: Admin Pattern Library
+label: Admin样板库
 pages:
-    - label: Introduction
+    - label: 介绍
       url: /pattern-library/bk-pattern.html
-    - label: Container
+    - label: 容器
       children:
 
-        - label: Static Content Container
+        - label: 静态内容容器
           url: /pattern-library/containers/staticContentContainer/contentContainer.html
 
-        - label: Slide-out, Modals, and Overlays
+        - label: 滑出、模态和覆盖
           url: /pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html
 
-        - label: Tabs
+        - label: 标签页/选项卡
           url: /pattern-library/containers/tabs/tabs.html
 
-    - label: Controls
+    - label: 控制
       children:
 
-        - label: Buttons
+        - label: 按钮
           url: /pattern-library/controls/buttons/buttons.html
 
-        - label: Button Bar
+        - label: 按钮栏
           url: /pattern-library/controls/button-bar/button-bar.html
 
         - label: Expandable Sections
@@ -29,83 +29,83 @@ pages:
         - label: View Controller
           url: /pattern-library/controls/viewcontroller/viewcontroller.html
 
-    - label: Displaying and Dealing with Data
+    - label: 显示和处理数据
       children:
 
-        - label: Filters
+        - label: 过滤器
           url: /pattern-library/filters/data-table-filters/filtering.html
 
-        - label: Tile
+        - label: 贴片
           url: /pattern-library/displaying-data/tile/tile.html
 
-        - label: Data Table
+        - label: 数据表格
           url: /pattern-library/displaying-data/datatable/datatable.html
 
-        - label: Tree
+        - label: 树
           url: /pattern-library/displaying-data/tree/tree.html
 
-    - label: Feedback to User
+    - label: 反馈给用户
       children:
 
-        - label: Progress Indicator
+        - label: 进度指标
           url: /pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 
-    - label: General
+    - label: 常规
       children:
 
-        - label: Accessibility Guideline
+        - label: 无障碍指南
           url: /pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 
-    - label: Getting User Input
+    - label: 获取用户输入
       children:
 
-        - label: Form Elements
+        - label: 表单元素
           url: /pattern-library/getting-user-input/form_elements/form_elements.html
 
-        - label: Image Uploader
+        - label: 图片上传
           url: /pattern-library/getting-user-input/image_uploader/image_uploader.html
 
-        - label: Date and Time Selector
+        - label: 日期和时间选择器
           url: /pattern-library/getting-user-input/date_time_selector/date_time_selector.html
 
-        - label: Row Pattern (Table)
+        - label: 行样式（表）
           url: /pattern-library/getting-user-input/row_pattern/row_pattern.html
 
-        - label: Use Default Config
+        - label: 使用默认配置
           url: /pattern-library/getting-user-input/use_default_config/use_default_config.html
 
-        - label: Select From List
+        - label: 从列表中选择
           url: /pattern-library/getting-user-input/select_from_list/select_from_list.html
 
-    - label: Graphics
+    - label: 绘图
       children:
 
-        - label: Iconography
+        - label: 图像学
           url: /pattern-library/graphics/iconography/iconography.html
 
-    - label: Navigation
+    - label: 导航
       children:
 
-        - label: Links
+        - label: 链接
           url: /pattern-library/navigation/links/links.html
 
-        - label: Wizard
+        - label: 向导
           url: /pattern-library/navigation/wizard/wizard.html
 
-    - label: Staging Patterns
+    - label: 阶段样式
       children:
 
-        - label: Timeline Dashboard
+        - label: 时间线仪表板
           url: /pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html
 
-        - label: Scheduled Changes Module
+        - label: 计划更改模块
           url: /pattern-library/staging-patterns/ScheduledChangesModule/module.html
 
-    - label: Templates
+    - label: 模板
       children:
 
-        - label: Address Form
+        - label: 地址表
           url: /pattern-library/templates/address-form/address-form.html
 
-        - label: Sign In Form
+        - label: 签到表
           url: /pattern-library/templates/sign-in-form/sign-in-form.html

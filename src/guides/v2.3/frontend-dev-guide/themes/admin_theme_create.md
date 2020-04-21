@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Create an Admin theme
+title: 创建一个Admin主题
 functional_areas:
   - Frontend
   - Theme
@@ -9,7 +9,7 @@ functional_areas:
 
 This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html).
 
-## Prerequisites
+## Prerequisites【先决条件】
 
 [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento.
 

@@ -1,43 +1,43 @@
-Complete the following tasks in the order shown:
+按所示顺序完成以下任务：
 
-*  [About the shared group](#mage-owner-about-group)
-*  [Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
-*  [Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*  [Step 3: Put the Magento file system owner in the web server's group](#install-update-depend-user-add2group)
-*  [Step 4: Get the Magento software](#perms-get-software)
-*  [Step 5: Set ownership and permissions for the shared group](#perms-set-two-users)
+*  [关于共享组](#mage-owner-about-group)
+*  [步骤1：创建Magento文件系统所有者并给用户一个强密码](#mage-owner-create-user)
+*  [步骤2:查找web服务器组](#install-update-depend-user-findgroup)
+*  [步骤3：将Magento文件系统所有者放入web服务器的组中](#install-update-depend-user-add2group)
+*  [步骤4：获取Magento软件](#perms-get-software)
+*  [步骤5:设置共享组的所有权和权限](#perms-set-two-users)
 
-### About the shared group {#mage-owner-about-group}
+### 关于共享组 {#mage-owner-about-group}
 
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).
+若要使web服务器能够在Magento文件系统中写入文件和目录，但同时维护Magento文件系统所有者的*所有权*，两个用户必须位于同一组中。这是必要的，这样两个用户都可以共享对Magento文件的访问权限（包括使用Magento管理或其他基于web的实用程序创建的文件）。
 
-This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
+本节讨论如何创建新的Magento文件系统所有者并将该用户放入web服务器的组中。如果愿意，可以使用现有用户帐户；出于安全原因，我们建议用户使用强密码。
 
 {:.bs-callout-info}
-Skip to [step 2](#install-update-depend-user-findgroup) if you plan on using an existing user account.
+如果计划使用现有用户帐户，请跳到 [步骤2](#install-update-depend-user-findgroup) 。
 
-### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
+### 步骤1：创建Magento文件系统所有者并给用户一个强密码 {#mage-owner-create-user}
 
-This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
+本节讨论如何创建Magento文件系统所有者。（Magento文件系统所有者是*命令行用户*的另一个术语）
 
-To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
+要在CentOS或Ubuntu上创建用户，请以具有`root`权限的用户身份输入以下命令：
 
 ```bash
 adduser <username>
 ```
 
-To give the user a password, enter the following command as a user with `root` privileges:
+要向用户提供密码，请以具有“root”权限的用户身份输入以下命令：
 
 ```bash
 passwd <username>
 ```
 
-Follow the prompts on your screen to create a password for the user.
+按照屏幕上的提示为用户创建密码。
 
 {:.bs-callout-warning}
-If you don't have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
+如果您在Magento服务器上没有`root`权限，则可以使用其他本地用户帐户。确保用户具有强密码，然后继续执行[将Magento文件系统所有者放入web服务器组](#install-update-depend-user-add2group)。
 
-For example, to create a user named `magento_user` and give the user a password, enter:
+例如，要创建名为`magento_user`的用户并为该用户提供密码，请输入：
 
 ```bash
 sudo adduser magento_user
@@ -48,11 +48,11 @@ sudo passwd magento_user
 ```
 
 {:.bs-callout-warning}
-Because the point of creating this user is to provide added security, make sure you create a [strong password](https://en.wikipedia.org/wiki/Password_strength).
+因为创建此用户的目的是提供附加的安全性，所以请确保创建一个 [强密码](https://en.wikipedia.org/wiki/Password_strength).
 
-### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
+### Step 2: 查找web服务器用户组 {#install-update-depend-user-findgroup}
 
-To find the web server user's group:
+要查找web服务器用户组，请执行以下操作：
 
 *  CentOS:
 
@@ -64,64 +64,62 @@ To find the web server user's group:
 
    ```bash
    grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
+   
+   # 通常，用户名和组名都是 `apache`.
    ```
 
-Typically, the user and group name are both `apache`.
+*  Ubuntu: `ps aux | grep apache` 找到apache用户，然后 `groups <apache user>` 找到组。通常，用户名和组名都是 `www-data`。
 
-*  Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group.
+### 步骤3：将Magento文件系统所有者放入web服务器的组中 {#install-update-depend-user-add2group}
 
-Typically, the username and the group name are both `www-data`.
-
-### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
-
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+要将Magento文件系统所有者放入web服务器的主组（假定CentOS和Ubuntu的典型Apache组名），请以具有`root`权限的用户身份输入以下命令：
 
 *  CentOS: `usermod -a -G apache <username>`
 *  Ubuntu: `usermod -a -G www-data <username>`
 
 {:.bs-callout-info}
-The `-a -G` options are important because they add `apache` or `www-data` as a _secondary_ group to the user account, which preserves the user's _primary_ group. Adding a secondary group to a user account helps [restrict file ownership and permissions](#perms-set-two-users) to ensure members of a shared group only have access to certain files.
+`-a -G`选项很重要，因为它们将`apache` 或`www-data`作为_辅助组_添加到用户帐户中，从而保留用户的主组。将_辅助组_添加到用户帐户有助于[限制文件所有权和权限](#perms-set-two-users) ，以确保共享组的成员只能访问某些文件。
 
-For example, to add the user `magento_user` to the `apache` primary group on CentOS:
+例如，要将用户`magento_user`添加到CentOS上的`apache`主组，请执行以下操作：
 
 ```bash
 sudo usermod -a -G apache magento_user
 ```
 
-To confirm your Magento user is a member of the web server group, enter the following command:
+要确认Magento用户是web服务器组的成员，请输入以下命令：
 
 ```bash
 groups magento_user
 ```
 
-The following sample result shows the user's primary (`magento`) and secondary (`apache`) groups.
+下面的示例结果显示了用户的主要（`magento`）组和次要（`apache`）组。
 
 ```bash
 magento_user : magento_user apache
 ```
 
 {:.bs-callout-info}
-Typically, the username and primary group name are the same.
+通常，用户名和主组名是相同的。
 
-To complete the task, restart the web server:
+要完成此任务，请重新启动web服务器：
 
 *  Ubuntu: `service apache2 restart`
 *  CentOS: `service httpd restart`
 
-### Step 4: Get the Magento software {#perms-get-software}
+### 步骤4：获取Magento软件 {#perms-get-software}
 
-If you haven't done so already, get the Magento software in one of the following ways:
+如果您还没有这样做，请使用以下方法之一获取Magento软件：
 
-*  [Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-*  [Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
-*  [Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*  [压缩文档]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+*  [Composer 元包]({{ page.baseurl }}/install-gde/composer.html)
+*  [克隆仓库 (仅贡献开发者)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-### Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}
+### 步骤5:设置共享组的所有权和权限  {#perms-set-two-users}
 
-To set ownership and permissions before you install the Magento software:
+要在安装Magento软件之前设置所有权和权限，请执行以下操作：
 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
-1. Enter the following commands in the order shown:
+1. 以Magento文件系统所有者的身份登录或切换到Magento服务器。
+1. 按所示顺序输入以下命令：
 
    ```bash
    cd <magento_root>
@@ -145,9 +143,9 @@ To set ownership and permissions before you install the Magento software:
 
 {% include install/file-system-perms-twouser_cmds-only_22.md %}
 
-### Next step
+###下一步
 
-After you have set file system ownership and permissions, continue with any of the following:
+设置文件系统所有权和权限后，请继续执行下列任一操作：
 
-*  [Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [命令行安装]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [安装向导]({{ page.baseurl }}/install-gde/install/web/install-web.html)

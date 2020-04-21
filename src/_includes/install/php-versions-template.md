@@ -1,4 +1,4 @@
-Supported PHP versions:
+支持的PHP版本:
 
 {% for version in supported_php_versions %}
 

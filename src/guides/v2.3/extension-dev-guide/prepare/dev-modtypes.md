@@ -3,14 +3,14 @@ group: php-developer-guide
 title: Component types
 ---
 
-Each component type has a different [directory structure][directory-structure] and different contents for [`composer.json`][composer].
+不同的组件类型都有不同的 [目录结构][directory-structure] 和不同内容的 [`composer.json`][composer].
 
 {% include php-dev/composer-types.md %}
 
 {:.ref-header}
-Next step
+下一步
 
-[About component file structure][component-file-structure]
+[关于组件的文件结构][component-file-structure]
 
 [directory-structure]: {{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html
 [composer]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html
